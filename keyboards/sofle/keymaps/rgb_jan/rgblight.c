@@ -21,7 +21,7 @@
 
 // Light combinations
 #define SET_ALL(...) \
-    {0, 2 * RGBLED_NUM, __VA_ARGS__}
+    {0, 2 * 35, __VA_ARGS__}
 
 #define SET_LAYER_SWITCHERS(...) \
     {L_HAND + 26, 1, __VA_ARGS__}, \
