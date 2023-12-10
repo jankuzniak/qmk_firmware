@@ -18,6 +18,7 @@
 #include <stdio.h>
 
 #include QMK_KEYBOARD_H
+#include "ysaren.h"
 
 #include "layout.c"
 
