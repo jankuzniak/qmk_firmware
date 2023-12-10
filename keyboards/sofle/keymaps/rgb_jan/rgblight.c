@@ -105,6 +105,7 @@ const rgblight_segment_t PROGMEM layer_command_lights[] = RGBLIGHT_LAYER_SEGMENT
 //_NUMPAD
 const rgblight_segment_t PROGMEM layer_numpad_lights[] = RGBLIGHT_LAYER_SEGMENTS(
     SET_ALL(HSV_BLACK),
+    SET_NUMPAD(HSV_CADMIUM_YELLOW),
     SET_LAYER_ID(HSV_GIANTS_ORANGE)
 );
 
