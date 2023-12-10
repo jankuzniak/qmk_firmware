@@ -17,7 +17,7 @@
   // SOFLE RGB
 
 #define L_HAND 0
-#define R_HAND L_HAND + RGBLED_NUM
+#define R_HAND L_HAND + 35
 
 // Light combinations
 #define SET_ALL(...) \
