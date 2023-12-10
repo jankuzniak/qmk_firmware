@@ -72,6 +72,9 @@
 	#define RGBLED_SPLIT { 35, 35 } // haven't figured out how to use this yet
 
 	//#define RGBLED_NUM 30
+    #define RGBLIGHT_DEFAULT_HUE 0
+    #define RGBLIGHT_DEFAULT_SAT 0
+    #define RGBLIGHT_DEFAULT_VAL 63
     #define RGBLIGHT_LIMIT_VAL 120
     #define RGBLIGHT_HUE_STEP 10
     #define RGBLIGHT_SAT_STEP 17

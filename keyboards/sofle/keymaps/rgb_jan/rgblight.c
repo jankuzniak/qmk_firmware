@@ -76,37 +76,37 @@ char layer_state_str[70];
 
 // QWERTY,
 const rgblight_segment_t PROGMEM layer_qwerty_lights[] = RGBLIGHT_LAYER_SEGMENTS(
-    SET_ALL(HSV_BLACK),
+    SET_ALL(HSV_GRAY),
     SET_LAYER_ID(HSV_GRAY)
-);
-
-const rgblight_segment_t PROGMEM layer_colemakdh_lights[] = RGBLIGHT_LAYER_SEGMENTS(
-  SET_LAYER_ID(HSV_PINK)
 );
 
 // _NUM, LOWER
 const rgblight_segment_t PROGMEM layer_num_lights[] = RGBLIGHT_LAYER_SEGMENTS(
-    SET_ALL(HSV_BLACK),
+    SET_ALL(HSV_GRAY),
     SET_LAYER_ID(HSV_DEEP_GREEN)
 );
 
 // _SYMBOL, RAISE
 const rgblight_segment_t PROGMEM layer_symbol_lights[] = RGBLIGHT_LAYER_SEGMENTS(
-    SET_ALL(HSV_BLACK),
+    SET_ALL(HSV_GRAY),
     SET_LAYER_ID(HSV_THE_GRAPE_WAR_OF_97)
 );
 
 // _COMMAND,
 const rgblight_segment_t PROGMEM layer_command_lights[] = RGBLIGHT_LAYER_SEGMENTS(
-    SET_ALL(HSV_BLACK),
+    SET_ALL(HSV_GRAY),
     SET_LAYER_ID(HSV_GIANTS_ORANGE)
 );
 
 //_NUMPAD
 const rgblight_segment_t PROGMEM layer_numpad_lights[] = RGBLIGHT_LAYER_SEGMENTS(
-    SET_ALL(HSV_BLACK),
+    SET_ALL(HSV_GRAY),
     SET_NUMPAD(HSV_CADMIUM_YELLOW),
     SET_LAYER_ID(HSV_GIANTS_ORANGE)
+);
+
+const rgblight_segment_t PROGMEM layer_colemakdh_lights[] = RGBLIGHT_LAYER_SEGMENTS(
+  SET_LAYER_ID(HSV_PINK)
 );
 
 // _SWITCHER   // light up top row
