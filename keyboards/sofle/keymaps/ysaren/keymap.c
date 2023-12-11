@@ -19,6 +19,7 @@
 
 #include QMK_KEYBOARD_H
 #include "ysaren.h"
+#include "features/num_word.c"
 
 #include "layout.c"
 

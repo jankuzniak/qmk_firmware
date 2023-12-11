@@ -7,17 +7,15 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
         }
 		} else if (index == 1) {
 			switch (get_highest_layer(layer_state)) {
-				case _COLEMAK:
-				case _QWERTY:
-				case _COLEMAKDH:
+				case L_QWERTY:
 					if (clockwise) {
 						tap_code(KC_PGDN);
 					} else {
 						tap_code(KC_PGUP);
 					}
 				break;
-			case _RAISE:
-			case _LOWER:
+			case L_SYMBOLS:
+			case L_NAVIGATION:
 					if (clockwise) {
 						tap_code(KC_DOWN);
 					} else {

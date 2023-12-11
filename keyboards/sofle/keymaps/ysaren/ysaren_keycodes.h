@@ -15,26 +15,22 @@
  */
 
 #pragma once
+#include QMK_KEYBOARD_H
 
-enum rj_layers {
-    L_BASE,
+// Custom keycodes and macros
+enum userspace_custom_keycodes {
+    // USER_CAPS_WORD_ENABLE
+    KC_QWERTY = SAFE_RANGE,
+    KC_SYMBOLS,
+    KC_NAVIGATION,
+    KC_NUMPAD,
+    KC_SWITCH,
 
-#ifdef USER_INCLUDE_QWERTY
-    L_QWERTY,
-#endif
+    KC_D_MUTE,
+    KC_TO_PASTE,
+    KC_DITTO,
 
-#ifdef USER_INCLUDE_GAMING_LAYER
-    L_GAMING,
-#endif
+    KC_NUMWORD,
 
-    L_NUMBERS,
-    L_SYMBOLS,
-    L_NAVIGATION,
-    L_FN,
-
-#ifdef USER_INCLUDE_MACRO_LAYER
-    L_MACROS,
-#endif
-
-    _LAYER_SAFE_RANGE
+    DYNAMIC_MACRO_RANGE
 };

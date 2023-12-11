@@ -16,7 +16,6 @@
 
 #pragma once
 #include QMK_KEYBOARD_H
-
-#ifdef USER_NUM_WORD_ENABLE
-#    include "features/num_word.h"
-#endif
+#include "ysaren_keycodes.h"
+#include "ysaren_layers.h"
+#include "features/num_word.h"

@@ -15,6 +15,7 @@
  */
 
 #include "num_word.h"
+#include "print.h"
 
 static uint16_t num_word_timer = 0;
 static bool is_num_word_on = false;
@@ -26,13 +27,14 @@ bool is_num_word_enabled(void) {
 void enable_num_word(void) {
     if (is_num_word_on) return;
     is_num_word_on = true;
-    layer_on(L_NUMBERS);
+    layer_on(L_NUMPAD);
 }
 
 void disable_num_word(void) {
+    // print("disable numword\n");
     if (!is_num_word_on) return;
     is_num_word_on = false;
-    layer_off(L_NUMBERS);
+    layer_off(L_NUMPAD);
 }
 
 void toggle_num_word(void) {
@@ -79,8 +81,9 @@ bool should_terminate_num_word(uint16_t keycode, const keyrecord_t *record) {
 
 
 bool process_record_num_word(uint16_t keycode, const keyrecord_t *record) {
+    // uprintf("KL: kc: 0x%04X, col: %2u, row: %2u, pressed: %u, time: %5u, int: %u, count: %u\n", keycode, record->event.key.col, record->event.key.row, record->event.pressed, record->event.time, record->tap.interrupted, record->tap.count);
     // Handle the custom keycodes that go with this feature
-    if (keycode == NUMWORD) {
+    if (keycode == KC_NUMWORD) {
         if (record->event.pressed) {
             enable_num_word();
             num_word_timer = timer_read();

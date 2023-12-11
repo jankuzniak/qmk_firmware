@@ -15,6 +15,7 @@
   * along with this program.  If not, see <http://www.gnu.org/licenses/>.
   */
   // SOFLE RGB
+#include "ysaren_layers.h"
 
 #define L_HAND 0
 #define R_HAND L_HAND + 35
@@ -80,22 +81,16 @@ const rgblight_segment_t PROGMEM layer_qwerty_lights[] = RGBLIGHT_LAYER_SEGMENTS
     SET_LAYER_ID(HSV_GRAY)
 );
 
-// _NUM, LOWER
-const rgblight_segment_t PROGMEM layer_num_lights[] = RGBLIGHT_LAYER_SEGMENTS(
-    SET_ALL(HSV_GRAY),
-    SET_LAYER_ID(HSV_DEEP_GREEN)
-);
-
-// _SYMBOL, RAISE
+// _SYMBOL
 const rgblight_segment_t PROGMEM layer_symbol_lights[] = RGBLIGHT_LAYER_SEGMENTS(
     SET_ALL(HSV_GRAY),
     SET_LAYER_ID(HSV_THE_GRAPE_WAR_OF_97)
 );
 
-// _COMMAND,
-const rgblight_segment_t PROGMEM layer_command_lights[] = RGBLIGHT_LAYER_SEGMENTS(
+// NAVIGATION
+const rgblight_segment_t PROGMEM layer_navigation_lights[] = RGBLIGHT_LAYER_SEGMENTS(
     SET_ALL(HSV_GRAY),
-    SET_LAYER_ID(HSV_GIANTS_ORANGE)
+    SET_LAYER_ID(HSV_DEEP_GREEN)
 );
 
 //_NUMPAD
@@ -105,36 +100,26 @@ const rgblight_segment_t PROGMEM layer_numpad_lights[] = RGBLIGHT_LAYER_SEGMENTS
     SET_LAYER_ID(HSV_GIANTS_ORANGE)
 );
 
-const rgblight_segment_t PROGMEM layer_colemakdh_lights[] = RGBLIGHT_LAYER_SEGMENTS(
-  SET_LAYER_ID(HSV_PINK)
-);
-
-// _SWITCHER   // light up top row
-const rgblight_segment_t PROGMEM layer_switcher_lights[] = RGBLIGHT_LAYER_SEGMENTS(
-    SET_LAYER_ID(HSV_GREEN),
+// L_SWITCH   // light up top row
+const rgblight_segment_t PROGMEM layer_switch_lights[] = RGBLIGHT_LAYER_SEGMENTS(
+    SET_LAYER_ID(HSV_GIANTS_ORANGE),
     SET_NUMROW(HSV_GREEN)
 );
 
 const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
     layer_qwerty_lights,
-    layer_num_lights, // overrides layer 1
     layer_symbol_lights,
-    layer_command_lights,
+    layer_navigation_lights, // overrides layer 1
     layer_numpad_lights,
-    layer_switcher_lights, // Overrides other layers
-    layer_colemakdh_lights
+    layer_switch_lights
 );
 
 layer_state_t layer_state_set_user(layer_state_t state) {
-    rgblight_set_layer_state(0, layer_state_cmp(state, _DEFAULTS) && layer_state_cmp(default_layer_state, _QWERTY));
-    rgblight_set_layer_state(7, layer_state_cmp(state, _DEFAULTS) && layer_state_cmp(default_layer_state, _COLEMAKDH));
-
-
-    rgblight_set_layer_state(1, layer_state_cmp(state, _LOWER));
-    rgblight_set_layer_state(2, layer_state_cmp(state, _RAISE));
-    rgblight_set_layer_state(3, layer_state_cmp(state, _ADJUST));
-    rgblight_set_layer_state(4, layer_state_cmp(state, _NUMPAD));
-    rgblight_set_layer_state(5, layer_state_cmp(state, _SWITCH));
+    rgblight_set_layer_state(0, layer_state_cmp(state, L_BASE) && layer_state_cmp(default_layer_state, L_QWERTY));
+    rgblight_set_layer_state(1, layer_state_cmp(state, L_SYMBOLS));
+    rgblight_set_layer_state(2, layer_state_cmp(state, L_NAVIGATION));
+    rgblight_set_layer_state(3, layer_state_cmp(state, L_NUMPAD));
+    rgblight_set_layer_state(4, layer_state_cmp(state, L_SWITCH));
     return state;
 }
 
