@@ -24,7 +24,7 @@
 #include "layout.c"
 
 #ifdef RGBLIGHT_ENABLE
-    #include "rgblight.c"
+    #include "rgb_layers.c"
 #endif
 
 #ifdef OLED_ENABLE
