@@ -82,7 +82,7 @@
     #define RGB_DISABLE_WHEN_USB_SUSPENDED true // turn off effects when suspended
 
     #define RGBLIGHT_LAYERS
-    #define RGBLIGHT_MAX_LAYERS 10
+    #define RGBLIGHT_MAX_LAYERS 11
 #endif
 
 #ifdef RGB_MATRIX_ENABLE
@@ -133,14 +133,3 @@
     // #   undef ENABLE_RGB_MATRIX_SOLID_SPLASH
     // #   undef ENABLE_RGB_MATRIX_SOLID_MULTISPLASH
 #endif
-
-// --------------------------------------------
-// COLORS
-// --------------------------------------------
-
-#define HSV_VIBRANT_BLUE         159, 255, 255 //224, 100, 100   // #003FFA
-#define HSV_THE_GRAPE_WAR_OF_97  199, 255, 200 //282, 100, 100 // #B400FF
-#define HSV_CADMIUM_YELLOW        41, 255, 255 // 57, 100, 100 // #FFF500
-#define HSV_DEEP_GREEN            85, 255, 255 //120, 100, 100 // #00FF00
-#define HSV_GIANTS_ORANGE         11, 224, 255 // 15,  88, 100 // #FF571E
-#define HSV_GRAY                   0,   0,  63
