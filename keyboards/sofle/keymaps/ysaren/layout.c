@@ -132,11 +132,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [L_MEDIA] = LAYOUT(
 //,----------------------------------------------------------------.                       ,------------------------------------------------------------.
-   XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  A(S(KC_5)),  A(S(KC_4)),                           XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  QK_BOOT,
+   EE_CLR,   XXXXXXX,  XXXXXXX,  XXXXXXX,  LSA(KC_5),    LSA(KC_4),                           XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  QK_BOOT,
 //,--------+---------+---------+---------+------------+------------.                       ,---------+---------+---------+---------+---------+----------.
-   XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  A(S(KC_9)),  A(S(KC_8)),                           XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
+  QK_REBOOT, XXXXXXX,  XXXXXXX,  XXXXXXX,  LSA(KC_9),    LSA(KC_8),                           XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
 //,--------+---------+---------+---------+------------+------------.                       ,---------+---------+---------+---------+---------+----------.
-   XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  A(S(KC_7)),  A(S(KC_6)),                           XXXXXXX,  XXXXXXX,  XXXXXXX,  G(KC_L),  _______,  KC_SYSTEM_SLEEP,
+   XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  LSA(KC_7),    LSA(KC_6),                           XXXXXXX,  XXXXXXX,  XXXXXXX,  G(KC_L),  _______,  KC_SYSTEM_SLEEP,
 //,--------+---------+---------+---------+------------+------------ | ====  |     |  ====  |---------+---------+---------+---------+---------+----------.
    XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,   XXXXXXX,     XXXXXXX,    XXXXXXX,       XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
 //,--------+---------+---------+---------+------------+------------|  ====  |     |  ====  |---------+---------+---------+---------+---------+----------.
