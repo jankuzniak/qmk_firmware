@@ -22,13 +22,13 @@ enum userspace_custom_keycodes {
     // USER_CAPS_WORD_ENABLE
     KC_QWERTY = SAFE_RANGE,
     KC_SYMBOLS,
-    KC_NAVIGATION,
+    KC_NAVI,
     KC_NUMPAD,
     KC_SWITCH,
 
     KC_QWERTY_35,
     KC_SYMBOLS_35,
-    KC_NAVIGATION_35,
+    KC_NAVI_35,
     KC_SWITCH_35,
 
     KC_D_MUTE,

@@ -90,8 +90,9 @@ const rgblight_segment_t PROGMEM layer_qwerty_lights[] = RGBLIGHT_LAYER_SEGMENTS
 // QWERTY_35,
 const rgblight_segment_t PROGMEM layer_qwerty_lights_35[] = RGBLIGHT_LAYER_SEGMENTS(
     SET_ALL(HSV_GRAY),
-    SET_NON_CORNE_LIGHTS(HSV_RED),
-    SET_LAYER_ID(HSV_GRAY)
+    SET_LAYER_ID(HSV_GRAY),
+    SET_LAYER_SWITCHERS(HSV_VIBRANT_BLUE),
+    SET_NON_CORNE_LIGHTS(HSV_BLACK)
 );
 
 // _SYMBOL
@@ -103,8 +104,9 @@ const rgblight_segment_t PROGMEM layer_symbol_lights[] = RGBLIGHT_LAYER_SEGMENTS
 // _SYMBOL_35
 const rgblight_segment_t PROGMEM layer_symbol_lights_35[] = RGBLIGHT_LAYER_SEGMENTS(
     SET_ALL(HSV_GRAY),
-    SET_NON_CORNE_LIGHTS(HSV_RED),
-    SET_LAYER_ID(HSV_THE_GRAPE_WAR_OF_97)
+    SET_LAYER_ID(HSV_THE_GRAPE_WAR_OF_97),
+    SET_LAYER_SWITCHERS(HSV_VIBRANT_BLUE),
+    SET_NON_CORNE_LIGHTS(HSV_BLACK)
 );
 
 // NAVIGATION
@@ -116,8 +118,9 @@ const rgblight_segment_t PROGMEM layer_navigation_lights[] = RGBLIGHT_LAYER_SEGM
 // NAVIGATION_35
 const rgblight_segment_t PROGMEM layer_navigation_lights_35[] = RGBLIGHT_LAYER_SEGMENTS(
     SET_ALL(HSV_GRAY),
-    SET_NON_CORNE_LIGHTS(HSV_RED),
-    SET_LAYER_ID(HSV_DEEP_GREEN)
+    SET_LAYER_ID(HSV_DEEP_GREEN),
+    SET_LAYER_SWITCHERS(HSV_VIBRANT_BLUE),
+    SET_NON_CORNE_LIGHTS(HSV_BLACK)
 );
 
 // NUMPAD
@@ -136,7 +139,8 @@ const rgblight_segment_t PROGMEM layer_switch_lights[] = RGBLIGHT_LAYER_SEGMENTS
 // SWITCH_35   // light up top row
 const rgblight_segment_t PROGMEM layer_switch_lights_35[] = RGBLIGHT_LAYER_SEGMENTS(
     SET_LAYER_ID(HSV_GIANTS_ORANGE),
-    SET_NON_CORNE_LIGHTS(HSV_RED)
+    SET_LAYER_SWITCHERS(HSV_VIBRANT_BLUE),
+    SET_NON_CORNE_LIGHTS(HSV_BLACK)
 );
 
 // MEDIA
@@ -200,8 +204,6 @@ void keyboard_post_init_user(void) {
     // {R_HAND + 20 + 7, 1, HSV_AZURE},
     // {R_HAND + 20 + 8 , 1, HSV_MAGENTA},
     // {R_HAND + 20 + 9 , 1, HSV_PURPLE}
-
-
 
 /*
   // Physical Layout

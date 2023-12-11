@@ -19,13 +19,15 @@
 enum ysaren_layers {
     L_BASE = 0,
     L_QWERTY = 0,
-    L_SYMBOLS,
-    L_NAVIGATION,
-    L_SWITCH,
-
     L_QWERTY_35,
+
+    L_SYMBOLS,
     L_SYMBOLS_35,
+
+    L_NAVIGATION,
     L_NAVIGATION_35,
+
+    L_SWITCH,
     L_SWITCH_35,
 
     L_NUMPAD,
