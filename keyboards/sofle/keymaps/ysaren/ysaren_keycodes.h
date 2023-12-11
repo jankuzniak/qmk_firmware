@@ -26,6 +26,11 @@ enum userspace_custom_keycodes {
     KC_NUMPAD,
     KC_SWITCH,
 
+    KC_QWERTY_35,
+    KC_SYMBOLS_35,
+    KC_NAVIGATION_35,
+    KC_SWITCH_35,
+
     KC_D_MUTE,
     KC_TO_PASTE,
     KC_DITTO,

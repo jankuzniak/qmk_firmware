@@ -80,6 +80,9 @@
     #define RGBLIGHT_VAL_STEP 17
 
     #define RGB_DISABLE_WHEN_USB_SUSPENDED true // turn off effects when suspended
+
+    #define RGBLIGHT_LAYERS
+    #define RGBLIGHT_MAX_LAYERS 10
 #endif
 
 #ifdef RGB_MATRIX_ENABLE

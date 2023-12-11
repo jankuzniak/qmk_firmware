@@ -21,12 +21,15 @@ enum ysaren_layers {
     L_QWERTY = 0,
     L_SYMBOLS,
     L_NAVIGATION,
-    L_NUMPAD,
     L_SWITCH,
 
-#ifdef USER_INCLUDE_MACRO_LAYER
-    L_MACROS,
-#endif
+    L_QWERTY_35,
+    L_SYMBOLS_35,
+    L_NAVIGATION_35,
+    L_SWITCH_35,
+
+    L_NUMPAD,
+    L_MEDIA,
 
     _LAYER_SAFE_RANGE
 };
