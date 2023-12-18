@@ -1,4 +1,4 @@
-/* Copyright 2021 Joshua T.
+/* Copyright 2021 Simon Arlott
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -13,21 +13,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
 #pragma once
 
-#include "quantum.h"
-#include "ysaren_keycodes.h"
-#include "ysaren_layers.h"
-#include "features/num_word.h"
-#include "features/oneshot.h"
-
-#include "rgb_layers.h"
-
-#ifndef MATRIX_ROWS
-#define MATRIX_ROWS 5
-#endif
-
-#ifndef MATRIX_COLS
-#define MATRIX_COLS 16
-#endif
+// The platform is 8-bit, so prefer 16-bit timers to reduce code size
+#define FAST_TIMER_T_SIZE 16

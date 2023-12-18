@@ -14,8 +14,7 @@
   * along with this program.  If not, see <http://www.gnu.org/licenses/>.
   */
   // SOFLE RGB
-#include "rgb_layers.h"
-#include "ysaren_layers.h"
+#include "ysaren.h"
 
 char layer_state_str[70];
 // Now define the array of layers. Later layers take precedence

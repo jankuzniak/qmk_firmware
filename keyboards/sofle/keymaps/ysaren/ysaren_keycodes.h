@@ -15,7 +15,7 @@
  */
 
 #pragma once
-#include QMK_KEYBOARD_H
+#include "quantum.h"
 
 // Custom keycodes and macros
 enum userspace_custom_keycodes {
@@ -31,9 +31,10 @@ enum userspace_custom_keycodes {
     KC_NAVI_35,
     KC_SWITCH_35,
 
-    KC_D_MUTE,
-    KC_TO_PASTE,
-    KC_DITTO,
+    OS_SFT,
+    OS_CTL,
+    OS_ALT,
+    OS_GUI,
 
     KC_NUMWORD,
 

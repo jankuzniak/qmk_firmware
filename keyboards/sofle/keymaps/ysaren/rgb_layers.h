@@ -9,7 +9,7 @@
 
 #define SET_LAYER_SWITCHERS(...) \
     {L_HAND + 26, 1, __VA_ARGS__}, \
-    {R_HAND + 25, 1, __VA_ARGS__}
+    {R_HAND + 26, 1, __VA_ARGS__}
 
 #define SET_UNDERGLOW(...) \
     {L_HAND + 0, 6, __VA_ARGS__}, \
