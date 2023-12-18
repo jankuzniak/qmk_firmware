@@ -31,17 +31,18 @@
 #define CUSTOM_LAYER_READ //if you remove this it causes issues - needs better guarding
 
 
-#define QUICK_TAP_TERM 0
 #ifdef TAPPING_TERM
     #undef TAPPING_TERM
     #define TAPPING_TERM 200
 #endif
+#define QUICK_TAP_TERM 0
+
+#define ONESHOT_TAP_TOGGLE 2
+#define ONESHOT_TIMEOUT 5000
+
 #define ENCODER_DIRECTION_FLIP
 
 #define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
-
-#define RGBLIGHT_SLEEP
-#define RGBLIGHT_LAYERS
 
 /* ws2812 RGB LED */
 #define WS2812_DI_PIN D3
@@ -53,24 +54,22 @@
 #endif
 
 #ifdef RGBLIGHT_ENABLE
-    #undef RGBLED_NUM
-
-	//#define RGBLIGHT_EFFECT_BREATHING
-	//#define RGBLIGHT_EFFECT_RAINBOW_MOOD
-	//#define RGBLIGHT_EFFECT_RAINBOW_SWIRL
-	//#define RGBLIGHT_EFFECT_SNAKE
-	//#define RGBLIGHT_EFFECT_KNIGHT
-	//#define RGBLIGHT_EFFECT_CHRISTMAS
-	//#define RGBLIGHT_EFFECT_STATIC_GRADIENT
-	//#define RGBLIGHT_EFFECT_RGB_TEST
-	//#define RGBLIGHT_EFFECT_ALTERNATING
-	//#define RGBLIGHT_EFFECT_TWINKLE
-
+    #undef  RGBLED_NUM
     #define RGBLED_NUM 70
-	//#define RGBLED_SPLIT
-	#define RGBLED_SPLIT { 35, 35 } // haven't figured out how to use this yet
 
-	//#define RGBLED_NUM 30
+    //#define RGBLIGHT_EFFECT_BREATHING
+    //#define RGBLIGHT_EFFECT_RAINBOW_MOOD
+    //#define RGBLIGHT_EFFECT_RAINBOW_SWIRL
+    //#define RGBLIGHT_EFFECT_SNAKE
+    //#define RGBLIGHT_EFFECT_KNIGHT
+    //#define RGBLIGHT_EFFECT_CHRISTMAS
+    //#define RGBLIGHT_EFFECT_STATIC_GRADIENT
+    //#define RGBLIGHT_EFFECT_RGB_TEST
+    //#define RGBLIGHT_EFFECT_ALTERNATING
+    //#define RGBLIGHT_EFFECT_TWINKLE
+
+    #define RGBLED_SPLIT { 35, 35 } // haven't figured out how to use this yet
+
     #define RGBLIGHT_DEFAULT_HUE 0
     #define RGBLIGHT_DEFAULT_SAT 0
     #define RGBLIGHT_DEFAULT_VAL 63
@@ -79,10 +78,11 @@
     #define RGBLIGHT_SAT_STEP 17
     #define RGBLIGHT_VAL_STEP 17
 
+    #define RGBLIGHT_SLEEP
     #define RGB_DISABLE_WHEN_USB_SUSPENDED true // turn off effects when suspended
 
     #define RGBLIGHT_LAYERS
-    #define RGBLIGHT_MAX_LAYERS 11
+    #define RGBLIGHT_MAX_LAYERS 10
 #endif
 
 #ifdef RGB_MATRIX_ENABLE
