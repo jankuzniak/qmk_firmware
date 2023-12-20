@@ -35,3 +35,7 @@
 #ifdef ENCODER_ENABLE
     #include "encoder.c"
 #endif
+
+#ifdef COMBO_ENABLE
+    #include "combos.c"
+#endif

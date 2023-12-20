@@ -13,7 +13,7 @@
   * You should have received a copy of the GNU General Public License
   * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-  #pragma once
+#pragma once
 
 //#define USE_MATRIX_I2C
 
@@ -39,6 +39,8 @@
 
 #define ONESHOT_TAP_TOGGLE 2
 #define ONESHOT_TIMEOUT 5000
+
+#define COMBO_COUNT 1
 
 #define ENCODER_DIRECTION_FLIP
 
@@ -133,3 +135,17 @@
     // #   undef ENABLE_RGB_MATRIX_SOLID_SPLASH
     // #   undef ENABLE_RGB_MATRIX_SOLID_MULTISPLASH
 #endif
+
+// size optimisation
+
+#define NO_ACTION_MACRO
+#define NO_ACTION_FUNCTION
+#define NO_ACTION_ONESHOT
+
+#ifndef NO_DEBUG
+#define NO_DEBUG
+#endif // !NO_DEBUG
+#if !defined(NO_PRINT) && !defined(CONSOLE_ENABLE)
+#define NO_PRINT
+#endif // !NO_PRINT
+
