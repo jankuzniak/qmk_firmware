@@ -15,7 +15,9 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
                 }
                 break;
             case L_SYMBOLS:
+            case L_SYMBOLS_35:
             case L_NAVIGATION:
+            case L_NAVIGATION_35:
                 if (clockwise) {
                     tap_code(KC_DOWN);
                 } else {
