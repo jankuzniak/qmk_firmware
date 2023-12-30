@@ -17,6 +17,7 @@
 #pragma once
 
 #include "quantum.h"
+#include "g/keymap_combo.h"
 #include "ysaren_keycodes.h"
 #include "ysaren_layers.h"
 #include "features/num_word.h"

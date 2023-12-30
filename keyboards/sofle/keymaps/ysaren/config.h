@@ -42,6 +42,10 @@
 
 #define COMBO_COUNT 1
 
+// gboards combos
+#define COMBO_VARIABLE_LEN
+#define COMBO_TERM 50
+
 #define ENCODER_DIRECTION_FLIP
 
 #define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
