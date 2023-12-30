@@ -62,23 +62,22 @@ const rgblight_segment_t PROGMEM layer_navigation_lights_35[] = RGBLIGHT_LAYER_S
 );
 
 // NUMPAD
+const rgblight_segment_t PROGMEM layer_number_lights[] = RGBLIGHT_LAYER_SEGMENTS(
+    SET_ALL(HSV_GRAY),
+    SET_NUMBER(HSV_CADMIUM_YELLOW),
+    SET_LAYER_ID(HSV_GIANTS_ORANGE)
+);
+
 const rgblight_segment_t PROGMEM layer_numpad_lights[] = RGBLIGHT_LAYER_SEGMENTS(
     SET_ALL(HSV_GRAY),
     SET_NUMPAD(HSV_CADMIUM_YELLOW),
-    SET_LAYER_ID(HSV_GIANTS_ORANGE)
+    SET_LAYER_ID(HSV_CADMIUM_YELLOW)
 );
 
 // SWITCH   // light up top row
 const rgblight_segment_t PROGMEM layer_switch_lights[] = RGBLIGHT_LAYER_SEGMENTS(
     SET_LAYER_ID(HSV_GIANTS_ORANGE),
     SET_NUMROW(HSV_GREEN)
-);
-
-// SWITCH_35   // light up top row
-const rgblight_segment_t PROGMEM layer_switch_lights_35[] = RGBLIGHT_LAYER_SEGMENTS(
-    SET_LAYER_ID(HSV_GIANTS_ORANGE),
-    SET_LAYER_SWITCHERS(HSV_VIBRANT_BLUE),
-    SET_NON_CORNE_LIGHTS(HSV_BLACK)
 );
 
 // MEDIA
@@ -100,28 +99,28 @@ const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
     layer_qwerty_lights,
     layer_symbol_lights,
     layer_navigation_lights,
-    layer_numpad_lights,
+    layer_number_lights,
     layer_switch_lights,
     layer_media_lights,
 
     layer_qwerty_lights_35,
     layer_symbol_lights_35,
     layer_navigation_lights_35,
-    layer_switch_lights_35
+    layer_numpad_lights
 );
 
 layer_state_t layer_state_set_user(layer_state_t state) {
     rgblight_set_layer_state(0, layer_state_cmp(state, L_BASE) && layer_state_cmp(default_layer_state, L_QWERTY));
     rgblight_set_layer_state(1, layer_state_cmp(state, L_SYMBOLS));
     rgblight_set_layer_state(2, layer_state_cmp(state, L_NAVIGATION));
-    rgblight_set_layer_state(3, layer_state_cmp(state, L_NUMPAD));
+    rgblight_set_layer_state(3, layer_state_cmp(state, L_NUMBERS));
     rgblight_set_layer_state(4, layer_state_cmp(state, L_SWITCH));
     rgblight_set_layer_state(5, layer_state_cmp(state, L_MEDIA));
 
     rgblight_set_layer_state(6, layer_state_cmp(state, L_BASE) && layer_state_cmp(default_layer_state, L_QWERTY_35));
     rgblight_set_layer_state(7, layer_state_cmp(state, L_SYMBOLS_35));
     rgblight_set_layer_state(8, layer_state_cmp(state, L_NAVIGATION_35));
-    rgblight_set_layer_state(9, layer_state_cmp(state, L_SWITCH_35));
+    rgblight_set_layer_state(9, layer_state_cmp(state, L_NUMPAD));
 
     return state;
 }

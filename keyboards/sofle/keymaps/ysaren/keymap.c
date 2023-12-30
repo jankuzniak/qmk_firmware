@@ -37,5 +37,7 @@
 #endif
 
 #ifdef COMBO_ENABLE
-    #include "combos.c"
+// replaced by gboards combo engine
+//    #include "combos.c"
+    #include "g/keymap_combo.h"
 #endif

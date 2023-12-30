@@ -15,6 +15,18 @@
     {L_HAND + 0, 6, __VA_ARGS__}, \
     {R_HAND + 0, 6, __VA_ARGS__}
 
+#define SET_NUMBER(...) \
+    {L_HAND + 13, 1, __VA_ARGS__}, \
+    {L_HAND + 18, 1, __VA_ARGS__}, \
+    {L_HAND + 23, 1, __VA_ARGS__}, \
+    {L_HAND + 28, 1, __VA_ARGS__}, \
+    {L_HAND + 33, 1, __VA_ARGS__}, \
+    {R_HAND + 13, 1, __VA_ARGS__}, \
+    {R_HAND + 18, 1, __VA_ARGS__}, \
+    {R_HAND + 23, 1, __VA_ARGS__}, \
+    {R_HAND + 28, 1, __VA_ARGS__}, \
+    {R_HAND + 33, 1, __VA_ARGS__}
+
 #define SET_NUMPAD(...) \
     {R_HAND + 15, 5, __VA_ARGS__}, \
     {R_HAND + 22, 3, __VA_ARGS__}, \

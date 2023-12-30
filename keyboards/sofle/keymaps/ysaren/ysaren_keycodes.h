@@ -23,7 +23,6 @@ enum userspace_custom_keycodes {
     KC_QWERTY = SAFE_RANGE,
     KC_SYMBOLS,
     KC_NAVI,
-    KC_NUMPAD,
     KC_SWITCH,
 
     KC_QWERTY_35,

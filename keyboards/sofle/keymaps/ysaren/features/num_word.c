@@ -27,14 +27,14 @@ bool is_num_word_enabled(void) {
 void enable_num_word(void) {
     if (is_num_word_on) return;
     is_num_word_on = true;
-    layer_on(L_NUMPAD);
+    layer_on(L_NUMBERS);
 }
 
 void disable_num_word(void) {
     // print("disable numword\n");
     if (!is_num_word_on) return;
     is_num_word_on = false;
-    layer_off(L_NUMPAD);
+    layer_off(L_NUMBERS);
 }
 
 void toggle_num_word(void) {

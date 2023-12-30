@@ -28,8 +28,8 @@ enum ysaren_layers {
     L_NAVIGATION_35,
 
     L_SWITCH,
-    L_SWITCH_35,
 
+    L_NUMBERS,
     L_NUMPAD,
     L_MEDIA,
 
