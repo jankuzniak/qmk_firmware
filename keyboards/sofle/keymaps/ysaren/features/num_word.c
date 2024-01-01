@@ -53,9 +53,11 @@ bool should_terminate_num_word(uint16_t keycode, const keyrecord_t *record) {
         // a couple more ranges, but I believe "explicit is better than
         // implicit"
         case KC_1 ... KC_0:
+        // shifted numbers
+        case KC_EXLM ... KC_UNDS:
+        case KC_MINS:
         case KC_EQL:
         case KC_SCLN:
-        case KC_MINS:
         case KC_DOT:
         case KC_LABK ... KC_RABK:
         case KC_LEFT_CTRL ... KC_RIGHT_GUI:
@@ -67,7 +69,6 @@ bool should_terminate_num_word(uint16_t keycode, const keyrecord_t *record) {
         case KC_PDOT:
 
         // Misc
-        case KC_UNDS:
         case KC_BSPC:
         case KC_NO:
             return false;
