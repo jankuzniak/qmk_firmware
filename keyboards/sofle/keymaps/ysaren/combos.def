@@ -1,1 +1,6 @@
 COMB(qwGui,      KC_LGUI,          KC_Q, KC_W)
+SUBS(ikKiss,     ":*",             KC_I, KC_K)
+SUBS(ujSmile,    ":-)",            KC_U, KC_J)
+SUBS(olWink,     ";-)",            KC_O, KC_L)
+SUBS(yhHeart,    "<3",             KC_Y, KC_H)
+TOGG(rtNumpad,   L_NUMPAD,         KC_RALT, KC_M)
