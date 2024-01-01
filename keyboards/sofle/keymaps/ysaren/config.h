@@ -35,6 +35,10 @@
     #undef TAPPING_TERM
     #define TAPPING_TERM 200
 #endif
+
+// two taps into TT(layer) toggle the layer
+#define TAPPING_TOGGLE 2
+
 #define QUICK_TAP_TERM 0
 
 #define ONESHOT_TAP_TOGGLE 2
