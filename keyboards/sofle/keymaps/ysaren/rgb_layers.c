@@ -58,16 +58,21 @@ const rgblight_segment_t PROGMEM layer_navigation_lights_35[] = RGBLIGHT_LAYER_S
     SET_ALL(HSV_GRAY),
     SET_LAYER_ID(HSV_DEEP_GREEN),
     SET_LAYER_SWITCHERS(HSV_VIBRANT_BLUE),
+    // L_NUMBERS
+    {R_HAND + 16, 1, HSV_GIANTS_ORANGE},
+    // L_NUMPAD
+    {R_HAND + 28, 1, HSV_GIANTS_ORANGE},
     SET_NON_CORNE_LIGHTS(HSV_BLACK)
 );
 
-// NUMPAD
+// NUMBERS
 const rgblight_segment_t PROGMEM layer_number_lights[] = RGBLIGHT_LAYER_SEGMENTS(
     SET_ALL(HSV_GRAY),
     SET_NUMBER(HSV_CADMIUM_YELLOW),
     SET_LAYER_ID(HSV_GIANTS_ORANGE)
 );
 
+// NUMPAD
 const rgblight_segment_t PROGMEM layer_numpad_lights[] = RGBLIGHT_LAYER_SEGMENTS(
     SET_ALL(HSV_GRAY),
     SET_NUMPAD(HSV_CADMIUM_YELLOW),
