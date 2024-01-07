@@ -1,16 +1,18 @@
 {
+    "processor": "RP2040",
+    "bootloader": "rp2040",
     "features": {
         "rgblight": true
     },
     "split": {
-        "soft_serial_pin": "D2"
+        "soft_serial_pin": "GP1"
     },
     "rgblight": {
         "led_count": 54,
         "split_count": [27, 27]
     },
     "ws2812": {
-        "pin": "D3"
+        "pin": "GP0"
     },
     "rgb_matrix": {
         "layout": [
