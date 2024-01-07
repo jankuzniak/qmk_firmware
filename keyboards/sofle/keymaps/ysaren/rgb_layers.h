@@ -1,5 +1,35 @@
 #pragma once
 
+// colour palette
+
+#define DHUSAR_GREY              0,   0, 171 //#AAAAAA
+#define CEREBRAL_GREY            0,   0, 204 //#CCCCCC
+#define SUGAR_GRAPE            192, 204, 255 //#9933FF
+#define BUDDHAS_LOVE_HANDLES    28, 204, 255 //#FFBB33
+#define ALIEN_PARASITE          81, 204, 255 //#47FF33
+#define BIG_YELLOW_TAXI         43, 204, 255 //#FFFF33
+#define DODGER_BLUE            153, 204, 255 //#3388FF
+#define BRIGHT_ORANGE           12, 204, 255 //#FF6D33
+
+// unused
+#define HSV_VIBRANT_BLUE         159, 255,  63 //224, 100, 100 // #003FFA
+#define HSV_THE_GRAPE_WAR_OF_97  199, 255,  63 //282, 100, 100 // #B400FF
+#define HSV_CADMIUM_YELLOW        41, 255,  63 // 57, 100, 100 // #FFF500
+#define HSV_DEEP_GREEN            85, 255,  63 //120, 100, 100 // #00FF00
+#define HSV_GRAY                   0,   0,  63
+#define HSV_GIANTS_ORANGE         11, 255, 255 // 15,  88, 100 // #FF571E
+
+// funcitonal colours
+#define HSV_ALPHAS DHUSAR_GREY
+#define HSV_ALPHAS_ACCENT CEREBRAL_GREY
+#define HSV_MODS SUGAR_GRAPE
+#define HSV_LAYER_SWITCH BUDDHAS_LOVE_HANDLES
+#define HSV_NUMBERS BIG_YELLOW_TAXI
+#define HSV_NAVIGATION DODGER_BLUE
+#define HSV_FUNCTION ALIEN_PARASITE
+#define HSV_SPECIAL BRIGHT_ORANGE
+
+
 #define L_HAND 0
 #define R_HAND L_HAND + 35
 
@@ -71,27 +101,7 @@
     SET_BOTTOM_MODIFIERS(__VA_ARGS__), \
     SET_OUTER_COL(__VA_ARGS__), \
     SET_THUMB_CLUSTER(__VA_ARGS__), \
-    SET_LAYER_SWITCHERS(HSV_CADMIUM_YELLOW)
-
-#define HSV_VIBRANT_BLUE         159, 255,  63 //224, 100, 100   // #003FFA
-#define HSV_THE_GRAPE_WAR_OF_97  199, 255,  63 //282, 100, 100 // #B400FF
-#define HSV_CADMIUM_YELLOW        41, 255,  63 // 57, 100, 100 // #FFF500
-#define HSV_DEEP_GREEN            85, 255,  63 //120, 100, 100 // #00FF00
-#define HSV_GRAY                   0,   0,  63
-
-#define HSV_GIANTS_ORANGE         11, 255, 255 // 15,  88, 100 // #FF571E
-//#define HSV_GIANTS_ORANGE    HSV_GOLD
-
-    // {R_HAND + 20, 1, HSV_RED},
-    // {R_HAND + 20 + 1, 1, HSV_GREEN},
-    // {R_HAND + 20 + 2, 1, HSV_BLUE},
-    // {R_HAND + 20 + 3, 1, HSV_ORANGE},
-    // {R_HAND + 20 + 4, 1, HSV_TEAL},
-    // {R_HAND + 20 + 5, 1, HSV_PINK},
-    // {R_HAND + 20 + 6, 1, HSV_CHARTREUSE},
-    // {R_HAND + 20 + 7, 1, HSV_AZURE},
-    // {R_HAND + 20 + 8 , 1, HSV_MAGENTA},
-    // {R_HAND + 20 + 9 , 1, HSV_PURPLE}
+    SET_LAYER_SWITCHERS(HSV_LAYER_SWITCH)
 
 /*
   // Physical Layout

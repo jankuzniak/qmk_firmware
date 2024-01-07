@@ -21,67 +21,65 @@ char layer_state_str[70];
 
 // QWERTY,
 const rgblight_segment_t PROGMEM layer_qwerty_lights[] = RGBLIGHT_LAYER_SEGMENTS(
-    SET_ALL(HSV_GRAY),
-    SET_LAYER_ID(HSV_GRAY)
+    SET_ALL(HSV_ALPHAS),
+    SET_LAYER_ID(HSV_ALPHAS)
 );
 
 // QWERTY_35,
 const rgblight_segment_t PROGMEM layer_qwerty_lights_35[] = RGBLIGHT_LAYER_SEGMENTS(
-    SET_ALL(HSV_GRAY),
-    SET_LAYER_ID(HSV_GRAY),
-    SET_LAYER_SWITCHERS(HSV_VIBRANT_BLUE),
+    SET_ALL(HSV_ALPHAS),
+    SET_LAYER_ID(HSV_ALPHAS),
     SET_NON_CORNE_LIGHTS(HSV_BLACK)
 );
 
 // _SYMBOL
 const rgblight_segment_t PROGMEM layer_symbol_lights[] = RGBLIGHT_LAYER_SEGMENTS(
-    SET_ALL(HSV_GRAY),
-    SET_LAYER_ID(HSV_THE_GRAPE_WAR_OF_97)
+    SET_ALL(HSV_ALPHAS),
+    SET_LAYER_ID(HSV_MODS)
 );
 
 // _SYMBOL_35
 const rgblight_segment_t PROGMEM layer_symbol_lights_35[] = RGBLIGHT_LAYER_SEGMENTS(
-    SET_ALL(HSV_GRAY),
-    SET_LAYER_ID(HSV_THE_GRAPE_WAR_OF_97),
-    SET_LAYER_SWITCHERS(HSV_VIBRANT_BLUE),
+    SET_ALL(HSV_ALPHAS),
+    SET_LAYER_ID(HSV_MODS),
     SET_NON_CORNE_LIGHTS(HSV_BLACK)
 );
 
 // NAVIGATION
 const rgblight_segment_t PROGMEM layer_navigation_lights[] = RGBLIGHT_LAYER_SEGMENTS(
-    SET_ALL(HSV_GRAY),
-    SET_LAYER_ID(HSV_DEEP_GREEN)
+    SET_ALL(HSV_ALPHAS),
+    SET_LAYER_ID(HSV_NAVIGATION)
 );
 
 // NAVIGATION_35
 const rgblight_segment_t PROGMEM layer_navigation_lights_35[] = RGBLIGHT_LAYER_SEGMENTS(
-    SET_ALL(HSV_GRAY),
-    SET_LAYER_ID(HSV_DEEP_GREEN),
-    SET_LAYER_SWITCHERS(HSV_VIBRANT_BLUE),
+    SET_ALL(HSV_ALPHAS),
+    SET_LAYER_ID(HSV_NAVIGATION),
     // L_NUMBERS
-    {R_HAND + 16, 1, HSV_GIANTS_ORANGE},
+    {R_HAND + 16, 1, HSV_LAYER_SWITCH},
     // L_NUMPAD
-    {R_HAND + 28, 1, HSV_GIANTS_ORANGE},
+    {R_HAND + 27, 1, HSV_LAYER_SWITCH},
     SET_NON_CORNE_LIGHTS(HSV_BLACK)
 );
 
 // NUMBERS
 const rgblight_segment_t PROGMEM layer_number_lights[] = RGBLIGHT_LAYER_SEGMENTS(
     SET_ALL(HSV_GRAY),
-    SET_NUMBER(HSV_CADMIUM_YELLOW),
-    SET_LAYER_ID(HSV_GIANTS_ORANGE)
+    SET_NUMBER(HSV_NUMBERS),
+    SET_LAYER_ID(HSV_NUMBERS)
 );
 
 // NUMPAD
 const rgblight_segment_t PROGMEM layer_numpad_lights[] = RGBLIGHT_LAYER_SEGMENTS(
     SET_ALL(HSV_GRAY),
-    SET_NUMPAD(HSV_CADMIUM_YELLOW),
-    SET_LAYER_ID(HSV_CADMIUM_YELLOW)
+    SET_NUMPAD(HSV_NUMBERS),
+    SET_LAYER_ID(HSV_NUMBERS)
 );
 
 // SWITCH   // light up top row
 const rgblight_segment_t PROGMEM layer_switch_lights[] = RGBLIGHT_LAYER_SEGMENTS(
-    SET_LAYER_ID(HSV_GIANTS_ORANGE),
+    SET_ALL(HSV_BLACK),
+    SET_LAYER_ID(HSV_FUNCTION),
     SET_NUMROW(HSV_GREEN)
 );
 
@@ -90,13 +88,13 @@ const rgblight_segment_t PROGMEM layer_media_lights[] = RGBLIGHT_LAYER_SEGMENTS(
     SET_ALL(HSV_BLACK),
     SET_LAYER_ID(HSV_BLACK),
 
-    {L_HAND + 32, 2, HSV_GIANTS_ORANGE},       // T, G
-    {L_HAND + 29, 2, HSV_THE_GRAPE_WAR_OF_97}, // R, F
+    {L_HAND + 32, 2, HSV_SPECIAL},      // T, G
+    {L_HAND + 29, 2, HSV_MODS},         // R, F
 
-    {R_HAND + 10, 2, HSV_GIANTS_ORANGE},  // -
-    {R_HAND + 13, 1, HSV_CADMIUM_YELLOW}, // ;
-    {R_HAND + 18, 1, HSV_GIANTS_ORANGE},  // L
-    {R_HAND +  8, 1, HSV_GIANTS_ORANGE}   // '
+    {R_HAND + 10, 2, HSV_SPECIAL},      // -
+    {R_HAND + 13, 1, HSV_LAYER_SWITCH}, // ;
+    {R_HAND + 18, 1, HSV_SPECIAL},      // L
+    {R_HAND +  8, 1, HSV_SPECIAL}       // '
 
 );
 
@@ -104,28 +102,30 @@ const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
     layer_qwerty_lights,
     layer_symbol_lights,
     layer_navigation_lights,
-    layer_number_lights,
-    layer_switch_lights,
-    layer_media_lights,
 
     layer_qwerty_lights_35,
     layer_symbol_lights_35,
     layer_navigation_lights_35,
-    layer_numpad_lights
+
+    layer_number_lights,
+    layer_numpad_lights,
+    layer_switch_lights,
+    layer_media_lights
 );
 
 layer_state_t layer_state_set_user(layer_state_t state) {
-    rgblight_set_layer_state(0, layer_state_cmp(state, L_BASE) && layer_state_cmp(default_layer_state, L_QWERTY));
+    rgblight_set_layer_state(0, layer_state_cmp(state|default_layer_state, L_QWERTY));
     rgblight_set_layer_state(1, layer_state_cmp(state, L_SYMBOLS));
     rgblight_set_layer_state(2, layer_state_cmp(state, L_NAVIGATION));
-    rgblight_set_layer_state(3, layer_state_cmp(state, L_NUMBERS));
-    rgblight_set_layer_state(4, layer_state_cmp(state, L_SWITCH));
-    rgblight_set_layer_state(5, layer_state_cmp(state, L_MEDIA));
 
-    rgblight_set_layer_state(6, layer_state_cmp(state, L_BASE) && layer_state_cmp(default_layer_state, L_QWERTY_35));
-    rgblight_set_layer_state(7, layer_state_cmp(state, L_SYMBOLS_35));
-    rgblight_set_layer_state(8, layer_state_cmp(state, L_NAVIGATION_35));
-    rgblight_set_layer_state(9, layer_state_cmp(state, L_NUMPAD));
+    rgblight_set_layer_state(3, layer_state_cmp(state|default_layer_state, L_QWERTY_35));
+    rgblight_set_layer_state(4, layer_state_cmp(state, L_SYMBOLS_35));
+    rgblight_set_layer_state(5, layer_state_cmp(state, L_NAVIGATION_35));
+
+    rgblight_set_layer_state(6, layer_state_cmp(state, L_NUMBERS));
+    rgblight_set_layer_state(7, layer_state_cmp(state, L_NUMPAD));
+    rgblight_set_layer_state(8, layer_state_cmp(state, L_SWITCH));
+    rgblight_set_layer_state(9, layer_state_cmp(state, L_MEDIA));
 
     return state;
 }
