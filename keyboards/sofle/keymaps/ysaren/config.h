@@ -21,6 +21,8 @@
 
 ///https://thomasbaart.nl/2018/12/01/reducing-firmware-size-in-qmk/
 
+#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET
+#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_TIMEOUT 250U
 
 #define MASTER_LEFT
 // #define MASTER_RIGHT
@@ -55,7 +57,7 @@
 #define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
 
 /* ws2812 RGB LED */
-#define WS2812_DI_PIN D3
+#define WS2812_DI_PIN GP0
 
 
 #ifdef RGB_MATRIX_ENABLE
