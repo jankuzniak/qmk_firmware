@@ -34,5 +34,40 @@
     },
     "clangd.arguments": [
         "--header-insertion=never"
-    ]
+    ],
+    "actionButtons": {
+        "defaultColor": "#ff0034", // Can also use string color names.
+        "loadNpmCommands":false, // Disables automatic generation of actions for npm commands.
+        "reloadButton":"♻️", // Custom reload button text or icon (default ↻). null value enables automatic reload on configuration change
+        "commands": [
+            // {
+            //     "cwd": "${workspaceFolder}", 	// Terminal initial folder ${workspaceFolder} and os user home as defaults
+            //     "name": "flash sofle",
+            //     "color": "#aaffaa",
+            //     "command": "cp .build/sofle_rev2_ysaren.uf2 /g/ysaren.uf2",
+            // },
+            // {
+            //     "cwd": "${workspaceFolder}", 	// Terminal initial folder ${workspaceFolder} and os user home as defaults
+            //     "name": "send sequence",
+            //     "color": "#aaffaa",
+            //     "useVsCodeApi": true,
+            //     "command": "workbench.action.terminal.sendSequence",
+            //     "args":    "cp .build/sofle_rev2_ysaren.uf2 /g/ysaren.uf2"
+            // },
+            // {
+            //     "cwd": "${workspaceFolder}", 	// Terminal initial folder ${workspaceFolder} and os user home as defaults
+            //     "name": "run task",
+            //     "color": "#aaffaa",
+            //     "useVsCodeApi": true,
+            //     "command": "workbench.action.tasks.runTask",
+            //     "args":    "flashSofle"
+            // },
+            // {
+            //     "cwd": "${workspaceFolder}", 	// Terminal initial folder ${workspaceFolder} and os user home as defaults
+            //     "name": "flash crkbd",
+            //     "color": "#aaaaff",
+            //     "command": "cp .build/crkbd_rev2_ysaren.uf2 g:/ysaren.uf2",
+            // },
+        ]
+   }
 }
