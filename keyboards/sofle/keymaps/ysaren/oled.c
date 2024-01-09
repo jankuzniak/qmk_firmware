@@ -31,7 +31,7 @@ static void render_logo(void) {
 static void print_status_narrow(void) {
     // Print current mode
     oled_write_P(PSTR("\n\n"), false);
-    oled_write_ln_P(PSTR("Dane\nEvans"), false);
+    oled_write_ln_P(PSTR("Ysaren"), false);
 
     oled_write_ln_P(PSTR(""), false);
 
@@ -42,6 +42,9 @@ static void print_status_narrow(void) {
         case L_QWERTY:
             oled_write_ln_P(PSTR("Qwrt"), false);
             break;
+        case L_QWERTY_35:
+            oled_write_ln_P(PSTR("Qwrt35"), false);
+            break;
         default:
             oled_write_ln_P(PSTR("Undef"), false);
     }
@@ -50,19 +53,28 @@ static void print_status_narrow(void) {
     oled_write_ln_P(PSTR("LAYER"), false);
     switch (get_highest_layer(layer_state)) {
         case L_QWERTY:
+        case L_QWERTY_35:
             oled_write_P(PSTR("Base\n"), false);
             break;
         case L_SYMBOLS:
-            oled_write_P(PSTR("Symbols"), false);
+        case L_SYMBOLS_35:
+            oled_write_P(PSTR("Symb"), false);
             break;
         case L_NAVIGATION:
+        case L_NAVIGATION_35:
             oled_write_P(PSTR("Navi"), false);
+            break;
+        case L_SWITCH:
+            oled_write_P(PSTR("Swit\n"), false);
+            break;
+        case L_NUMBERS:
+            oled_write_P(PSTR("Num"), false);
             break;
         case L_NUMPAD:
             oled_write_P(PSTR("Nump\n"), false);
             break;
-        case L_SWITCH:
-            oled_write_P(PSTR("Swit\n"), false);
+        case L_MEDIA:
+            oled_write_P(PSTR("Media\n"), false);
             break;
         default:
             oled_write_ln_P(PSTR("Undef"), false);
