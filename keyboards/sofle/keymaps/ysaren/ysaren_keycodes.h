@@ -32,7 +32,8 @@ enum userspace_custom_keycodes {
 
     OS_SFT,
     OS_CTL,
-    OS_ALT,
+    OS_LALT,
+    OS_RALT,
     OS_GUI,
 
     KC_NUMWORD,
