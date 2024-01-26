@@ -106,8 +106,11 @@
 #define SET_BOTTOM_MODIFIERS(...) \
     {L_HAND + 6, 1, __VA_ARGS__}, \
     {R_HAND + 6, 1, __VA_ARGS__}, \
-    {L_HAND + 15, 2, __VA_ARGS__}, \
-    {R_HAND + 15, 2, __VA_ARGS__}
+    {L_HAND + 16, 1, __VA_ARGS__}, \
+    {R_HAND + 16, 1, __VA_ARGS__}
+
+    // {L_HAND + 15, 2, __VA_ARGS__},
+    // {R_HAND + 15, 2, __VA_ARGS__}
 
 #define SET_NON_CORNE_LIGHTS(...) \
     SET_ROW_0(__VA_ARGS__), \

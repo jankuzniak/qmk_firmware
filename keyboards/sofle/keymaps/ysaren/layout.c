@@ -14,7 +14,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 #define F_ZONE_1 LCAG(1)
 #define F_ZONE_2 LCAG(2)
 
-
 #define TG_NUMPAD   TG(L_NUMPAD)
 #define MO_NUMBER   MO(L_NUMBERS)
 #define COLON_MEDIA LT(L_MEDIA,KC_SCLN)
@@ -98,9 +97,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+-------+--------+--------+--------+------|                              |--------+-------+--------+--------+--------+---------|
   _______,  KC_EXLM,  KC_AT,    KC_LCBR,  KC_RCBR,  KC_PIPE,                          KC_KP_PLUS,   KC_KP_7,  KC_KP_8,  KC_KP_9, KC_KP_MINUS,    KC_F12,
   //|------+-------+--------+--------+--------+------|                              |--------+-------+--------+--------+--------+---------|
-  _______,  KC_HASH,  KC_DLR,   KC_LPRN,  KC_RPRN,  KC_GRV,                           KC_EQUAL,     KC_KP_4,  KC_KP_5,  KC_KP_6, KC_KP_ASTERISK, KC_ENT,
+  _______,  KC_HASH,  KC_DLR,   KC_LPRN,  KC_RPRN,  KC_GRV,                           KC_MINUS,     KC_KP_4,  KC_KP_5,  KC_KP_6, KC_KP_ASTERISK, KC_ENT,
   //|------+-------+--------+--------+--------+------|  ===  |              |  ===  |--------+-------+--------+--------+--------+---------|
-  _______,  KC_PERC,  KC_CIRC,  KC_LBRC,  KC_RBRC,  KC_TILDE,  _______,      _______, KC_AMPR,      KC_KP_1,  KC_KP_2,  KC_KP_3, KC_KP_SLASH,    XXXXXXX,
+  _______,  KC_PERC,  KC_CIRC,  KC_LBRC,  KC_RBRC,  KC_TILDE,  _______,      _______, KC_EQUAL,     KC_KP_1,  KC_KP_2,  KC_KP_3, KC_KP_SLASH,    XXXXXXX,
   //|------+-------+--------+--------+--------+------|  ===  |              |  ===  |--------+-------+--------+--------+--------+---------|
                            _______, KC_LABK, KC_RABK, _______, _______,      _______, _______,      KC_KP_0,  KC_KP_0,  KC_KP_DOT
   //                      \--------+--------+--------+---------+-------|    |--------+---------+--------+---------+-------/
@@ -125,7 +124,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //,-----------------------------------------------------------.                       ,------------------------------------------------------------.
    XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,                           XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
 //,--------+---------+---------+---------+---------+----------.                       ,---------+---------+---------+---------+---------+----------.
-   _______,  _______,  _______,  _______,  _______,  _______,                          KC_PLUS,  XXXXXXX,  XXXXXXX,   XXXXXXX,  XXXXXXX,  XXXXXXX,
+   _______,  _______,  _______,  _______,  _______,  _______,                          KC_PLUS,   KC_AMPR,  KC_ASTR,  XXXXXXX,  XXXXXXX,  XXXXXXX,
 //,--------+---------+---------+---------+---------+----------.                       ,---------+---------+---------+---------+---------+----------.
    _______,  _______,  _______,  _______,  _______,  _______,                          KC_MINUS,  OS_CTL,   OS_SFT,   OS_RALT,  OS_GUI,   XXXXXXX,
 //,--------+---------+---------+---------+---------+---------- | ====  |     |  ====  |---------+---------+---------+---------+---------+----------.
@@ -137,13 +136,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [L_NUMPAD] = LAYOUT(
 //,-----------------------------------------------------------.                       ,--------------------------------------------------------------------.
-   XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,                           XXXXXXX,  XXXXXXX,   XXXXXXX, XXXXXXX,  XXXXXXX,         XXXXXXX,
+   _______,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,                           XXXXXXX,  XXXXXXX,   XXXXXXX, XXXXXXX,  XXXXXXX,         XXXXXXX,
 //,--------+---------+---------+---------+---------+----------.                       ,---------+---------+---------+---------+-------------+--------------.
-   _______,  _______,  _______,  _______,  _______,  _______,                          KC_KP_PLUS, KC_P7,     KC_P8,   KC_P9,   KC_KP_MINUS,     XXXXXXX,
+   _______,  XXXXXXX,  KC_F2,    KC_ESC,   KC_F4,    XXXXXXX,                         KC_KP_PLUS,  KC_P7,     KC_P8,   KC_P9,   KC_KP_MINUS,     XXXXXXX,
 //,--------+---------+---------+---------+---------+----------.                       ,---------+---------+---------+---------+-------------+--------------.
-   _______,  _______,  _______,   _______,  _______, _______,                           KC_EQUAL,  KC_P4,     KC_P5,   KC_P6,   KC_KP_ASTERISK,  KC_ENT,
+   _______,  KC_LPRN,  KC_DEL,   KC_UP,    KC_ENT,   KC_RPRN,                        KC_KP_MINUS,  KC_P4,     KC_P5,   KC_P6,   KC_KP_ASTERISK,  KC_ENT,
 //,--------+---------+---------+---------+---------+---------- | ====  |     |  ====  |---------+---------+---------+---------+-------------+--------------.
-   _______,  _______,  _______,  _______,  _______,  _______,  _______,       _______,  KC_AMPR,   KC_P1,     KC_P2,   KC_P3,   KC_KP_SLASH,     KC_DOT,
+   _______,  KC_LABK,  KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_RABK,  _______,       _______,  KC_EQUAL,  KC_P1,     KC_P2,   KC_P3,   KC_KP_SLASH,     KC_DOT,
 //,--------+---------+---------+---------+---------+---------- | ====  |     |  ====  |---------+---------+---------+---------+-------------+--------------.
                        _______,  _______,  _______,  _______,  TG_NUMPAD,     _______,  _______,  KC_KP_0,   KC_KP_0,  KC_DOT
 //                   \---------+---------+---------+----------|--------|     |--------|---------+---------+---------+---------/

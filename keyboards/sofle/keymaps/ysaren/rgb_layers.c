@@ -77,16 +77,49 @@ const rgblight_segment_t PROGMEM layer_navigation_lights_35[] = RGBLIGHT_LAYER_S
 
 // NUMBERS
 const rgblight_segment_t PROGMEM layer_number_lights[] = RGBLIGHT_LAYER_SEGMENTS(
-    SET_ALL(HSV_GRAY),
+    SET_ALL(HSV_BLACK),
+    SET_ROW_1(HSV_ALPHAS),
     SET_ROW_2(HSV_NUMBERS),
-    SET_LAYER_ID(HSV_NUMBERS)
+    {R_HAND + led_index[1][0], 1, HSV_ALPHAS},
+    {R_HAND + led_index[2][0], 1, HSV_ALPHAS},
+    {R_HAND + led_index[3][0], 1, HSV_ALPHAS},
+    {R_HAND + led_index[3][1], 1, HSV_ALPHAS},
+    {R_HAND + led_index[3][2], 1, HSV_ALPHAS},
+    {R_HAND + led_index[3][3], 1, HSV_ALPHAS},
+    {R_HAND + led_index[3][4], 1, HSV_ALPHAS},
+    {R_HAND + led_index[3][5], 1, HSV_ALPHAS},
+    SET_LAYER_ID(HSV_NUMBERS),
+    SET_NON_CORNE_LIGHTS(HSV_BLACK)
+
 );
 
 // NUMPAD
 const rgblight_segment_t PROGMEM layer_numpad_lights[] = RGBLIGHT_LAYER_SEGMENTS(
-    SET_ALL(HSV_ALPHAS),
+    SET_ALL(HSV_BLACK),
     SET_NUMPAD(HSV_NUMBERS),
-    SET_LAYER_ID(HSV_NUMBERS)
+    {R_HAND + 12, 3, HSV_ALPHAS},
+    {R_HAND +  7, 1, HSV_ALPHAS},
+    {R_HAND +  8, 1, HSV_NAVIGATION},
+    {R_HAND + 32, 3, HSV_ALPHAS},
+
+    {L_HAND + led_index[1][2], 1, HSV_FUNCTION},
+    {L_HAND + led_index[1][3], 1, HSV_NAVIGATION},
+    {L_HAND + led_index[1][4], 1, HSV_FUNCTION},
+
+    {L_HAND + led_index[2][1], 1, HSV_ALPHAS},
+    {L_HAND + led_index[2][2], 1, HSV_NAVIGATION},
+    {L_HAND + led_index[2][3], 1, HSV_SPECIAL},
+    {L_HAND + led_index[2][4], 1, HSV_NAVIGATION},
+    {L_HAND + led_index[2][5], 1, HSV_ALPHAS},
+
+    {L_HAND + led_index[3][1], 1, HSV_ALPHAS},
+    {L_HAND + led_index[3][2], 1, HSV_SPECIAL},
+    {L_HAND + led_index[3][3], 1, HSV_SPECIAL},
+    {L_HAND + led_index[3][4], 1, HSV_SPECIAL},
+    {L_HAND + led_index[3][5], 1, HSV_ALPHAS},
+    SET_LAYER_ID(HSV_NUMBERS),
+    SET_NON_CORNE_LIGHTS(HSV_BLACK)
+
 );
 
 // SWITCH   // light up top row
