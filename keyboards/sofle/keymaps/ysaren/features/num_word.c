@@ -59,6 +59,7 @@ bool should_terminate_num_word(uint16_t keycode, const keyrecord_t *record) {
         case KC_EQL:
         case KC_SCLN:
         case KC_DOT:
+        case KC_COMM:
         case KC_LABK ... KC_RABK:
         case KC_LEFT_CTRL ... KC_RIGHT_GUI:
         case KC_LEFT_BRACKET ... KC_RIGHT_BRACKET:
@@ -70,6 +71,7 @@ bool should_terminate_num_word(uint16_t keycode, const keyrecord_t *record) {
 
         // Misc
         case KC_BSPC:
+        case KC_TAB:
         case KC_NO:
             return false;
 
