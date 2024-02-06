@@ -34,16 +34,16 @@
 #define HSV_FUNCTION ALIEN_PARASITE
 #define HSV_SPECIAL BRIGHT_ORANGE
 
-
+#define LEDS_COUNT 35
 #define L_HAND 0
-#define R_HAND L_HAND + 35
+#define R_HAND L_HAND + LEDS_COUNT
 
 // Light combinations
 #define SET_ALL(...) \
-    {0, 2 * 35, __VA_ARGS__}
+    {0, 2 * LEDS_COUNT, __VA_ARGS__}
 
 #define SET_HAND(hand, ...) \
-    {hand,  35, __VA_ARGS__}
+    {hand, LEDS_COUNT, __VA_ARGS__}
 
 #define SET_LAYER_SWITCHERS(...) \
     {L_HAND + 26, 1, __VA_ARGS__}, \
@@ -52,6 +52,19 @@
 #define SET_UNDERGLOW(...) \
     {L_HAND + 0, 6, __VA_ARGS__}, \
     {R_HAND + 0, 6, __VA_ARGS__}
+
+#define SET_ROW(hand, row, ...) \
+    {hand + led_index[row][0], 1, __VA_ARGS__}, \
+    {hand + led_index[row][1], 1, __VA_ARGS__}, \
+    {hand + led_index[row][2], 1, __VA_ARGS__}, \
+    {hand + led_index[row][3], 1, __VA_ARGS__}, \
+    {hand + led_index[row][4], 1, __VA_ARGS__}, \
+    {hand + led_index[row][5], 1, __VA_ARGS__}
+
+#define SET_THUMB(hand, ...) \
+    {hand + led_index[3][3], 1, __VA_ARGS__}, \
+    {hand + led_index[3][4], 1, __VA_ARGS__}, \
+    {hand + led_index[3][5], 1, __VA_ARGS__}
 
 #define SET_ROW_0(...) \
     {L_HAND + 10, 2, __VA_ARGS__}, \
