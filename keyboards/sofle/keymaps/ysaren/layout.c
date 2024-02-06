@@ -1,7 +1,5 @@
 #include "ysaren.h"
 
-const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-
 #define HR_GUI OSM(MOD_LGUI)
 #define HR_ALT OSM(MOD_LALT)
 #define HR_SFT OSM(MOD_LSFT)
@@ -18,6 +16,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 #define MO_NUMBER   MO(L_NUMBERS)
 #define COLON_MEDIA LT(L_MEDIA,KC_SCLN)
 
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+
 [L_QWERTY] = LAYOUT(
            //,-----------------------------------------------------.                         ,------------------------------------------------------------------.
               KC_ESC,   KC_1,  KC_2,     KC_3,     KC_4,     KC_5,                              KC_6,    KC_7,     KC_8,     KC_9,     KC_0,       KC_MINUS,
@@ -28,7 +28,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
            //|--------+------+-------+---------+--- -----+---------|  ===  |     |  ===  |------------+---------+---------+--------+-------------+--------------|
               KC_LCTL,  KC_Z,  KC_X,     KC_C,     KC_V,     KC_B,   KC_MUTE,    KC_SCRSHT,     KC_N,    KC_M,    KC_COMM,  KC_DOT,   KC_SLASH,    KC_BACKSLASH,
            //|--------+------+-------+---------+--- -----+---------|  ===  |     |  ===  |------------+---------+---------+--------+-------------+--------------|
-                              KC_LGUI,  XXXXXXX,  KC_LALT,  KC_SPC,  KC_NAVI,    KC_SYMBOLS,  KC_BSPC,  KC_RALT,  KC_RSFT,  KC_RCTL
+                              KC_LGUI,  XXXXXXX,  KC_LALT,  KC_SPC,  KC_NAVI_35,    KC_SYMBOLS_35,  KC_BSPC,  KC_RALT,  KC_RSFT,  KC_RCTL
            //             \----------+---------+---------+---------+-------|     |-------+------------+---------+---------+-------/
 ),
 
@@ -72,7 +72,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //,--------+---------+---------------+---------------+---------------+---------- | ====  |     |  ====  |---------+------------+------------+----------+---------+----------.
    _______,  C(KC_Z),      C(KC_X),     C(KC_C),       C(KC_V),    KC_DITTO,     _______,       _______,  XXXXXXX,   TG_NUMPAD,  C(KC_DOWN),  XXXXXXX,   C(KC_KP_0),  C(KC_KP_MINUS),
 //,--------+---------+---------------+---------------+---------------+----------|  ====  |     |  ====  |---------+------------+------------+----------+---------+----------.
-                       _______,        _______,         _______,       _______,  _______,       _______,  _______,   KC_NUMWORD,   _______,   _______
+                       _______,        _______,         _______,       _______,  _______,       _______,  KC_NUMWORD,  _______,    _______,   _______
 //                   \---------------+---------------+---------------+----------|--------|     |--------|---------+------------+------------+----------/
 ),
 
