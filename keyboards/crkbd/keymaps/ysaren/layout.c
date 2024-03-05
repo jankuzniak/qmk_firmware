@@ -52,7 +52,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [L_SYMBOLS] = LAYOUT(
-  //,------------------------------------------------.                               ,---------------------------------------------------.
+  //,------------------------------------------------.                               ,---------------------------------------------------
   _______,  KC_EXLM,  KC_AT,    KC_LCBR,  KC_RCBR,  KC_PIPE,                          KC_PLUS,   KC_AMPR,  KC_ASTR,  XXXXXXX,  XXXXXXX,  XXXXXXX,
   //|------+-------+--------+--------+--------+------|                              |--------+-------+--------+--------+--------+---------|
   _______,  KC_HASH,  KC_DLR,   KC_LPRN,  KC_RPRN,  KC_GRV,                           KC_MINUS,  OS_CTL,   OS_SFT,   OS_RALT,  OS_GUI,   XXXXXXX,
@@ -65,7 +65,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [L_NUMPAD] = LAYOUT(
 //,-----------------------------------------------------------.                       ,--------------------------------------------------------------------.
-   _______,  XXXXXXX,  KC_F2,    KC_ESC,   KC_F4,    XXXXXXX,                         KC_KP_PLUS,  KC_P7,     KC_P8,   KC_P9,   KC_KP_MINUS,     XXXXXXX,
+   _______,  KC_RALT,  KC_F2,    KC_ESC,   KC_F4,    XXXXXXX,                         KC_KP_PLUS,  KC_P7,     KC_P8,   KC_P9,   KC_KP_MINUS,     XXXXXXX,
 //,--------+---------+---------+---------+---------+----------.                       ,---------+---------+---------+---------+-------------+--------------.
    _______,  KC_LPRN,  KC_DEL,   KC_UP,    KC_ENT,   KC_RPRN,                        KC_KP_MINUS,  KC_P4,     KC_P5,   KC_P6,   KC_KP_ASTERISK,  KC_ENT,
 //,--------+---------+---------+---------+---------+---------- | ====  |     |  ====  |---------+---------+---------+---------+-------------+--------------.

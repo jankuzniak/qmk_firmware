@@ -22,7 +22,10 @@
         "cstdbool": "c",
         "cstdint": "c",
         "chrono": "c",
-        "variant": "c"
+        "variant": "c",
+        "string": "c",
+        "system_error": "c",
+        "algorithm": "c"
     },
     "[markdown]": {
         "editor.trimAutoWhitespace": false,
@@ -69,5 +72,6 @@
             //     "command": "cp .build/crkbd_rev2_ysaren.uf2 g:/ysaren.uf2",
             // },
         ]
-   }
+},
+"C_Cpp.intelliSenseEngineFallback": "disabled"
 }
