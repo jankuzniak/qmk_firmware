@@ -9,8 +9,8 @@
 #define KC_D_MUTE   C(A(S(KC_UP)))
 #define KC_SCRSHT   G(S(KC_S))
 
-#define F_ZONE_1 LCAG(1)
-#define F_ZONE_2 LCAG(2)
+#define F_ZONE_1 LCAG(KC_1)
+#define F_ZONE_2 LCAG(KC_2)
 
 #define TG_NUMPAD   TG(L_NUMPAD)
 #define MO_NUMBER   MO(L_NUMBERS)
@@ -68,9 +68,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //,--------+---------+---------------+---------------+---------------+----------.                       ,---------+------------+------------+----------+---------+----------.
    _______,  OS_GUI,       OS_LALT,     OS_SFT,        OS_CTL,     C(KC_T),                               KC_HOME,  C(KC_LEFT),    KC_UP,   C(KC_RIGHT), KC_PGUP,  KC_INS,
 //,--------+---------+---------------+---------------+---------------+----------.                       ,---------+------------+------------+----------+---------+----------.
-   _______,  C(KC_A),      KC_DEL,      KC_ESC,        KC_ENT,     KC_TO_PASTE,                           KC_END,     KC_LEFT,     KC_DOWN,   KC_RGHT,   KC_PGDN,     C(KC_KP_PLUS),
+   _______,  C(KC_A),      KC_DEL,      KC_ESC,        KC_ENT,     KC_TO_PASTE,                           KC_END,     KC_LEFT,     KC_DOWN,   KC_RGHT,   KC_PGDN,     C(KC_PLUS),
 //,--------+---------+---------------+---------------+---------------+---------- | ====  |     |  ====  |---------+------------+------------+----------+---------+----------.
-   _______,  C(KC_Z),      C(KC_X),     C(KC_C),       C(KC_V),    KC_DITTO,     _______,       _______,  XXXXXXX,   TG_NUMPAD,  C(KC_DOWN),  XXXXXXX,   C(KC_KP_0),  C(KC_KP_MINUS),
+   _______,  C(KC_Z),      C(KC_X),     C(KC_C),       C(KC_V),    KC_DITTO,     _______,       _______,  XXXXXXX,   TG_NUMPAD,  C(KC_DOWN),  XXXXXXX,   C(KC_0),     C(KC_MINUS),
 //,--------+---------+---------------+---------------+---------------+----------|  ====  |     |  ====  |---------+------------+------------+----------+---------+----------.
                        _______,        _______,         _______,       _______,  _______,       _______,  KC_NUMWORD,  _______,    _______,   _______
 //                   \---------------+---------------+---------------+----------|--------|     |--------|---------+------------+------------+----------/
