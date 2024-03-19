@@ -25,7 +25,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define RP2040_BOOTLOADER_DOUBLE_TAP_RESET
 #define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_TIMEOUT 250U
 
-
 /* Select hand configuration */
 
 #define MASTER_LEFT
@@ -60,4 +59,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     #define RGBLIGHT_HUE_STEP 10
     #define RGBLIGHT_SAT_STEP 17
     #define RGBLIGHT_VAL_STEP 17
+#endif
+
+#ifdef VIA_ENABLE
+    #define DYNAMIC_KEYMAP_LAYER_COUNT 7
 #endif
