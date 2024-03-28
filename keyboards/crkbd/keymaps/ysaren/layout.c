@@ -14,7 +14,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [L_QWERTY] = LAYOUT(
 //,-----------------------------------------------------------.       ,-------------------------------------------------------------.
-   KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,               KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_EQUAL,
+   KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,               KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     MO(L_IDE),
 //,--------+---------+---------+---------+---------+----------.       ,----------+---------+---------+---------+---------+----------.
    KC_LSFT,  KC_A,     KC_S,     KC_D,     KC_F,     KC_G,               KC_H,     KC_J,     KC_K,     KC_L,     COL_MED,  KC_QUOT,
 //,--------+---------+---------+---------+---------+----------.       ,----------+---------+---------+---------+---------+----------.
@@ -112,6 +112,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //                   \---------+---------+------------+------------|--------|     |--------|---------+---------+---------+---------/
 ),
 
+[L_IDE] = LAYOUT(
+//,------------------------------   ---------------------   -------------.                       ,------------------------------------------------------------.
+   XXXXXXX,  XXXXXXX,  XXXXXXX,     XXXXXXX,  A(S(KC_R)),     XXXXXXX,                              XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
+//,--------+---------+---------+-   --------+------------   +------------.                       ,---------+---------+---------+---------+---------+----------.
+   XXXXXXX,  XXXXXXX,  XXXXXXX,     XXXXXXX,  XXXXXXX,        XXXXXXX,                              XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
+//,--------+---------+---------+------------+------------+------------ | ====  |        |  ====  |---------+---------+---------+---------+---------+----------.
+   XXXXXXX,  XXXXXXX,  A(S(KC_X)),  XXXXXXX,  XXXXXXX,        XXXXXXX,                              XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
+//,--------+---------+---------+------------+------------+------------|  ====  |        |  ====  |---------+---------+---------+---------+---------+----------.
+                                    XXXXXXX,  XXXXXXX,        XXXXXXX,                              XXXXXXX,  XXXXXXX,  XXXXXXX
+//                   \---------+------------+------------+------------|--------|        |--------|---------+---------+---------+---------/
+),
+
 };
 
 oneshot_state os_shft_state = os_up_unqueued;
@@ -185,7 +197,6 @@ bool is_oneshot_cancel_key(uint16_t keycode) {
     switch (keycode) {
         case KC_SYMBOLS:
         case KC_NAVI:
-        case KC_SWITCH:
             return true;
         default:
             return false;
