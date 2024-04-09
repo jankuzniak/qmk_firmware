@@ -33,5 +33,7 @@ enum ysaren_layers {
     L_NUMPAD,
     L_MEDIA,
 
+    L_IDE,
+
     _LAYER_SAFE_RANGE
 };
