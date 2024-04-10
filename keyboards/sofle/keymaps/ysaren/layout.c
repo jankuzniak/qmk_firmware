@@ -1,4 +1,4 @@
-#include "ysaren.h"
+#include "ysaren_sofle.h"
 
 #define HR_GUI OSM(MOD_LGUI)
 #define HR_ALT OSM(MOD_LALT)
