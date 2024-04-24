@@ -43,7 +43,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //   XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,            XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
    _______,  OS_GUI,   OS_LALT,  OS_SFT,   OS_CTL,   C(KC_T),            KC_HOME,  C(KC_LEFT),   KC_UP,   C(KC_RIGHT), KC_PGUP,     KC_INS,
 //,--------+---------+---------+---------+---------+----------.       ,----------+---------+---------+---------+---------+----------.
-   MO(L_IDE),  C(KC_A),  KC_DEL,   KC_ESC,   KC_ENT,   KC_TO_PASTE,        KC_END,   KC_LEFT,      KC_DOWN,   KC_RGHT,   KC_PGDN,     C(KC_PLUS),
+   MO(L_IDE), C(KC_A),  KC_DEL,   KC_ESC,   KC_ENT,   KC_TO_PASTE,        KC_END,   KC_LEFT,      KC_DOWN,   KC_RGHT,   KC_PGDN,     C(KC_PLUS),
 //,--------+---------+---------+---------+---------+----------.       ,----------+---------+---------+---------+---------+----------.
    _______,  C(KC_Z),  C(KC_X),  C(KC_C),  C(KC_V),  KC_DITTO,           XXXXXXX,  TG_NUMPAD,  C(KC_DOWN),  XXXXXXX,   C(KC_0),     C(KC_MINUS),
 //,--------+---------+---------+---------+---------+----------.       ,----------+---------+---------+---------+---------+----------.
