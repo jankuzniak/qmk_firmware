@@ -25,6 +25,7 @@
 /* Select hand configuration */
 
 #define MASTER_LEFT
+#undef SPLIT_USB_DETECT // fix for keyboard not being recognised at boot
 // #define MASTER_RIGHT
 // #define EE_HANDS
 
