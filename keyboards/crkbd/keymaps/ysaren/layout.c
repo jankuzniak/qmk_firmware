@@ -43,7 +43,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //   XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,            XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
    _______,  OS_GUI,   OS_LALT,  OS_SFT,   OS_CTL,   C(KC_T),            KC_HOME,  C(KC_LEFT),   KC_UP,   C(KC_RIGHT), KC_PGUP,     KC_INS,
 //,--------+---------+---------+---------+---------+----------.       ,----------+---------+---------+---------+---------+----------.
-   _______,  C(KC_A),  KC_DEL,   KC_ESC,   KC_ENT,   KC_TO_PASTE,        KC_END,   KC_LEFT,      KC_DOWN,   KC_RGHT,   KC_PGDN,     C(KC_PLUS),
+   MO(L_IDE), C(KC_A),  KC_DEL,   KC_ESC,   KC_ENT,   KC_TO_PASTE,        KC_END,   KC_LEFT,      KC_DOWN,   KC_RGHT,   KC_PGDN,     C(KC_PLUS),
 //,--------+---------+---------+---------+---------+----------.       ,----------+---------+---------+---------+---------+----------.
    _______,  C(KC_Z),  C(KC_X),  C(KC_C),  C(KC_V),  KC_DITTO,           XXXXXXX,  TG_NUMPAD,  C(KC_DOWN),  XXXXXXX,   C(KC_0),     C(KC_MINUS),
 //,--------+---------+---------+---------+---------+----------.       ,----------+---------+---------+---------+---------+----------.
@@ -55,7 +55,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,------------------------------------------------.                               ,---------------------------------------------------
   _______,  KC_EXLM,  KC_AT,    KC_LCBR,  KC_RCBR,  KC_PIPE,                          KC_PLUS,   KC_AMPR,  KC_ASTR,  XXXXXXX,  XXXXXXX,  XXXXXXX,
   //|------+-------+--------+--------+--------+------|                              |--------+-------+--------+--------+--------+---------|
-  _______,  KC_HASH,  KC_DLR,   KC_LPRN,  KC_RPRN,  KC_GRV,                           KC_MINUS,  OS_CTL,   OS_SFT,   OS_RALT,  OS_GUI,   XXXXXXX,
+  KC_LSFT,  KC_HASH,  KC_DLR,   KC_LPRN,  KC_RPRN,  KC_GRV,                           KC_MINUS,  OS_CTL,   OS_SFT,   OS_RALT,  OS_GUI,   XXXXXXX,
   //|------+-------+--------+--------+--------+------|  ===  |              |  ===  |--------+-------+--------+--------+--------+---------|
   _______,  KC_PERC,  KC_CIRC,  KC_LBRC,  KC_RBRC,  KC_TILDE,                         KC_EQUAL,  XXXXXXX,  KC_LABK,  KC_RABK,  XXXXXXX,  XXXXXXX,
   //|------+-------+--------+--------+--------+------|  ===  |              |  ===  |--------+-------+--------+--------+--------+---------|
@@ -114,11 +114,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [L_IDE] = LAYOUT(
 //,------------------------------   ---------------------   -------------.                       ,------------------------------------------------------------.
-   XXXXXXX,  XXXXXXX,  XXXXXXX,     XXXXXXX,  A(S(KC_R)),     XXXXXXX,                              XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
+   XXXXXXX,  XXXXXXX,  XXXXXXX,     XXXXXXX,  A(S(KC_R)),     XXXXXXX,                              XXXXXXX,  XXXXXXX,  A(S(KC_I)),  XXXXXXX,  XXXXXXX,  C(KC_F11),
 //,--------+---------+---------+-   --------+------------   +------------.                       ,---------+---------+---------+---------+---------+----------.
-   XXXXXXX,  XXXXXXX,  XXXXXXX,     XXXXXXX,  XXXXXXX,        XXXXXXX,                              XXXXXXX,  XXXXXXX,  XXXXXXX,  A(S(KC_L)),  XXXXXXX,  XXXXXXX,
+   XXXXXXX,  XXXXXXX,  A(S(KC_S)),  XXXXXXX,  C(S(KC_F)),     XXXXXXX,                              XXXXXXX,  XXXXXXX,  XXXXXXX,  A(S(KC_L)),  XXXXXXX,  XXXXXXX,
 //,--------+---------+---------+------------+------------+------------ | ====  |        |  ====  |---------+---------+---------+---------+---------+----------.
-   XXXXXXX,  XXXXXXX,  A(S(KC_X)),  XXXXXXX,  XXXXXXX,        XXXXXXX,                              XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
+   XXXXXXX,  XXXXXXX,  A(S(KC_X)),  XXXXXXX,  XXXXXXX,        XXXXXXX,                              XXXXXXX, A(S(KC_M)), XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
 //,--------+---------+---------+------------+------------+------------|  ====  |        |  ====  |---------+---------+---------+---------+---------+----------.
                                     XXXXXXX,  XXXXXXX,        XXXXXXX,                              XXXXXXX,  XXXXXXX,  XXXXXXX
 //                   \---------+------------+------------+------------|--------|        |--------|---------+---------+---------+---------/
