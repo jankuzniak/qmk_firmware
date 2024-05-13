@@ -58,7 +58,8 @@
 #define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
 
 /* ws2812 RGB LED */
-#define WS2812_DI_PIN GP0
+#define WS2812_DI_PIN GP0 // RP2040
+// #define WS2812_DI_PIN D3 // promicro
 
 
 #ifdef RGB_MATRIX_ENABLE
