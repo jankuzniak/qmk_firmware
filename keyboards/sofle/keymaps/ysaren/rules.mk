@@ -9,6 +9,9 @@ SWAP_HANDS_ENABLE = no
 TAP_DANCE_ENABLE = no
 CAPS_WORD_ENABLE = yes
 
+# see https://docs.qmk.fm/#/feature_debounce_type
+DEBOUNCE_TYPE = sym_eager_pk
+
 # combos - with gboards dictionaries
 # see https://combos.gboards.ca/docs/
 VPATH  +=  keyboards/gboards/
