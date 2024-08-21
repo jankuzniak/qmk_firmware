@@ -10,7 +10,8 @@ TAP_DANCE_ENABLE = no
 CAPS_WORD_ENABLE = yes
 
 # see https://docs.qmk.fm/#/feature_debounce_type
-DEBOUNCE_TYPE = sym_eager_pk
+# DEBOUNCE_TYPE = sym_eager_pk
+DEBOUNCE_TYPE = sym_defer_pk
 
 # combos - with gboards dictionaries
 # see https://combos.gboards.ca/docs/
