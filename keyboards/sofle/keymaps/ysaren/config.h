@@ -61,18 +61,18 @@
 #define DEBOUNCE 7
 
 /* ws2812 RGB LED */
-#define WS2812_DI_PIN GP0 // RP2040
+// #define WS2812_DI_PIN GP0 // RP2040
 // #define WS2812_DI_PIN D3 // promicro
 
 
 #ifdef RGB_MATRIX_ENABLE
-    #define RGBLED_NUM 35    // Number of LEDs
-    #define RGB_MATRIX_LED_COUNT RGBLED_NUM
+    //#define RGBLED_NUM 35    // Number of LEDs
+    //#define RGB_MATRIX_LED_COUNT RGBLED_NUM
 #endif
 
 #ifdef RGBLIGHT_ENABLE
-    #undef  RGBLED_NUM
-    #define RGBLED_NUM 70
+    //#undef  RGBLED_NUM
+    //#define RGBLED_NUM 70
 
     //#define RGBLIGHT_EFFECT_BREATHING
     //#define RGBLIGHT_EFFECT_RAINBOW_MOOD
@@ -85,7 +85,7 @@
     //#define RGBLIGHT_EFFECT_ALTERNATING
     //#define RGBLIGHT_EFFECT_TWINKLE
 
-    #define RGBLED_SPLIT { 35, 35 } // haven't figured out how to use this yet
+    // #define RGBLED_SPLIT { 35, 35 } // haven't figured out how to use this yet
 
     #define RGBLIGHT_DEFAULT_HUE 0
     #define RGBLIGHT_DEFAULT_SAT 0
