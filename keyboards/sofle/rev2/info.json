@@ -1,0 +1,6 @@
+{
+    "rgblight": {
+        "led_count": 70,
+        "split_count": [35, 35]
+    }
+}
