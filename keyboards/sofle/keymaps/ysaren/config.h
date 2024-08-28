@@ -58,7 +58,7 @@
 #define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
 
 // see https://docs.qmk.fm/#/feature_debounce_type
-#define DEBOUNCE 7
+#define DEBOUNCE 0
 
 /* ws2812 RGB LED */
 // #define WS2812_DI_PIN GP0 // RP2040
