@@ -17,6 +17,12 @@ master-upstream -> master-upstream-ysaren -> master -> develop
 ## Build instructions
 For converters see: https://docs.qmk.fm/#/feature_converters?id=converters
 
+#### regression testing
+- test combo (q+w)
+- test numword
+- test oneshot modifiers (ctrl+esc)
+- test capsword (double tap shift)
+
 ### Corne
 
 make crkbd:ysaren -e CONVERT_TO=elite_pi
