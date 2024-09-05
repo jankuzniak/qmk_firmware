@@ -26,6 +26,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                     XXXXXXX,  XXXXXXX,  KC_LALT,  KC_SPC,  KC_NAVI,       KC_SYMBOLS, KC_BSPC, KC_RALT, XXXXXXX,  KC_RCTL
 ),
 
+
+[L_GAME_HW] = LAYOUT(
+   XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,                          XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
+   XXXXXXX,  KC_Q,     XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,                          XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
+   XXXXXXX,  KC_1,     KC_2,     KC_3,     KC_4,     KC_5,                             XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
+   XXXXXXX,  KC_A,     XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,      XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
+                       XXXXXXX,  XXXXXXX,  _______,  _______,  _______,      _______,  _______,  _______,  XXXXXXX,  XXXXXXX
+),
+
 /*
  * Navigation
  * ,----------------------------------------------------.                    ,------------------------------------------------------.
@@ -43,11 +52,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
 [L_NAVIGATION] = LAYOUT(
-    XXXXXXX,    XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,                           XXXXXXX,     XXXXXXX,      XXXXXXX,   XXXXXXX,    XXXXXXX,    XXXXXXX,
-    _______,    OS_GUI,   OS_LALT,  OS_SFT,   OS_CTL,   C(KC_T),                           KC_HOME,   C(KC_LEFT),     KC_UP,   C(KC_RIGHT),  KC_PGUP,    KC_INS,
-    MO(L_IDE),  C(KC_A),  KC_DEL,   KC_ESC,   KC_ENT,   KC_TO_PASTE,                       KC_END,      KC_LEFT,      KC_DOWN,   KC_RGHT,    KC_PGDN,  C(KC_PLUS),
-    _______,    C(KC_Z),  C(KC_X),  C(KC_C),  C(KC_V),  KC_DITTO,  _______,      _______,  XXXXXXX,     TG_NUMPAD,  C(KC_DOWN),  XXXXXXX,    C(KC_0),  C(KC_MINUS),
-                          XXXXXXX,  XXXXXXX,  _______,  _______,   _______,      _______,  KC_NUMWORD,  _______,      XXXXXXX,   XXXXXXX
+    XXXXXXX,    XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,                              XXXXXXX,     XXXXXXX,      XXXXXXX,   XXXXXXX,    XXXXXXX,    XXXXXXX,
+    _______,    OS_GUI,   OS_LALT,  OS_SFT,   OS_CTL,   C(KC_T),                              KC_HOME,   C(KC_LEFT),     KC_UP,   C(KC_RIGHT),  KC_PGUP,    KC_INS,
+    MO(L_IDE),  C(KC_A),  KC_DEL,   KC_ESC,   KC_ENT,   KC_TO_PASTE,                          KC_END,      KC_LEFT,      KC_DOWN,   KC_RGHT,    KC_PGDN,  C(KC_PLUS),
+    _______,    C(KC_Z),  C(KC_X),  C(KC_C),  C(KC_V),  KC_DITTO,     _______,      _______,  XXXXXXX,     TG_NUMPAD,  C(KC_DOWN),  XXXXXXX,    C(KC_0),  C(KC_MINUS),
+                          XXXXXXX,  XXXXXXX,  _______,  KC_SYMBOLS,   _______,      _______,  KC_NUMWORD,  _______,      XXXXXXX,   XXXXXXX
 ),
 
 /*
@@ -106,11 +115,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [L_SWITCH] = LAYOUT(
-    XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,    XXXXXXX,  XXXXXXX,                          XXXXXXX,   XXXXXXX,    XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
-    _______,  KC_F1,    KC_F2,    KC_F3,      KC_F4,    KC_F5,                            KC_F6,     KC_F7,      KC_F8,    KC_F9,    KC_F10,   KC_F11,
-    KC_LSFT,  XXXXXXX,  XXXXXXX,  XXXXXXX,    XXXXXXX,  XXXXXXX,                          XXXXXXX,   KC_QWERTY,  XXXXXXX,  XXXXXXX,  XXXXXXX,  KC_F12,
-    _______,  KC_PSCR,  KC_SCRL,  G(KC_PAUS), XXXXXXX,  XXXXXXX,  _______,      _______,  F_ZONE_1,  F_ZONE_2,   KC_APP,   XXXXXXX,  XXXXXXX,  XXXXXXX,
-                        XXXXXXX,  XXXXXXX,    _______,  _______,  _______,      _______,  _______,   _______,    XXXXXXX,  XXXXXXX
+    XXXXXXX,  XXXXXXX,        XXXXXXX,  XXXXXXX,    XXXXXXX,  XXXXXXX,                          XXXXXXX,   XXXXXXX,    XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
+    _______,  KC_F1,          KC_F2,    KC_F3,      KC_F4,    KC_F5,                            KC_F6,     KC_F7,      KC_F8,    KC_F9,    KC_F10,   KC_F11,
+    KC_LSFT,  TG(L_GAME_HW),  XXXXXXX,  XXXXXXX,    XXXXXXX,  XXXXXXX,                          XXXXXXX,   KC_QWERTY,  XXXXXXX,  XXXXXXX,  XXXXXXX,  KC_F12,
+    _______,  KC_PSCR,        KC_SCRL,  G(KC_PAUS), XXXXXXX,  XXXXXXX,  _______,      _______,  F_ZONE_1,  F_ZONE_2,   KC_APP,   XXXXXXX,  XXXXXXX,  XXXXXXX,
+                              XXXXXXX,  XXXXXXX,    _______,  _______,  _______,      _______,  _______,   _______,    XXXXXXX,  XXXXXXX
 ),
 
 // LSA(KC_4 .. KC_9) are to handled by autohotkey
@@ -125,10 +134,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [L_IDE] = LAYOUT(
    XXXXXXX,  C(KC_1),  XXXXXXX,     XXXXXXX,  XXXXXXX,     XXXXXXX,                          XXXXXXX,  XXXXXXX,     XXXXXXX,     XXXXXXX,     XXXXXXX,  XXXXXXX,
    XXXXXXX,  XXXXXXX,  XXXXXXX,     XXXXXXX,  A(S(KC_R)),  XXXXXXX,                          XXXXXXX,  XXXXXXX,     A(S(KC_I)),  XXXXXXX,     XXXXXXX,  C(KC_F11),
-   XXXXXXX,  XXXXXXX,  A(S(KC_S)),  XXXXXXX,  C(S(KC_F)),  XXXXXXX,                          XXXXXXX,  XXXXXXX,     XXXXXXX,     A(S(KC_L)),  XXXXXXX,  XXXXXXX,
+   _______,  XXXXXXX,  A(S(KC_S)),  XXXXXXX,  C(S(KC_F)),  XXXXXXX,                          XXXXXXX,  XXXXXXX,     XXXXXXX,     A(S(KC_L)),  XXXXXXX,  XXXXXXX,
    XXXXXXX,  XXXXXXX,  A(S(KC_X)),  XXXXXXX,  XXXXXXX,     XXXXXXX,  XXXXXXX,      XXXXXXX,  XXXXXXX,  A(S(KC_M)),  XXXXXXX,     XXXXXXX,     XXXXXXX,  XXXXXXX,
                        XXXXXXX,     XXXXXXX,  _______,     _______,  _______,      _______,  _______,  _______,     XXXXXXX,     XXXXXXX
 ),
+
 };
 
 oneshot_state os_shft_state = os_up_unqueued;

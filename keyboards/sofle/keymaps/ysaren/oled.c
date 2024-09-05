@@ -54,6 +54,9 @@ static void print_status_narrow(void) {
         case L_QWERTY:
             oled_write_P(PSTR("Base\n"), false);
             break;
+        case L_GAME_HW:
+            oled_write_P(PSTR("Hero "), false);
+            break;
         case L_SYMBOLS:
             oled_write_P(PSTR("Symb "), false);
             break;

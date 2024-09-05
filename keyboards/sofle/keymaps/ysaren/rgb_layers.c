@@ -25,7 +25,7 @@ const rgblight_segment_t PROGMEM layer_qwerty_lights[] = RGBLIGHT_LAYER_SEGMENTS
     SET_LAYER_ID(HSV_ALPHAS)
 );
 
-// _SYMBOL
+// SYMBOL
 const rgblight_segment_t PROGMEM layer_symbol_lights[] = RGBLIGHT_LAYER_SEGMENTS(
     SET_ALL(HSV_ALPHAS),
     SET_HAND(R_HAND, HSV_BLACK),
@@ -182,6 +182,15 @@ const rgblight_segment_t PROGMEM layer_ide_lights[] = RGBLIGHT_LAYER_SEGMENTS(
     SET_LAYER_ID(HSV_BLACK)
 );
 
+// GAME_HW,
+const rgblight_segment_t PROGMEM layer_game_hw_lights[] = RGBLIGHT_LAYER_SEGMENTS(
+    SET_ALL(HSV_BLACK),
+    {L_HAND + led_index[1][1], 1, HSV_ALPHAS}, // q
+    {L_HAND + led_index[2][1], 5, HSV_ALPHAS}, // 1-5
+    {L_HAND + led_index[3][1], 1, HSV_ALPHAS}, // a
+    SET_LAYER_ID(HSV_ALPHAS)
+);
+
 const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
     layer_qwerty_lights,
     layer_symbol_lights,
@@ -190,7 +199,8 @@ const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
     layer_numpad_lights,
     layer_switch_lights,
     layer_media_lights,
-    layer_ide_lights
+    layer_ide_lights,
+    layer_game_hw_lights
 );
 
 layer_state_t layer_state_set_user(layer_state_t state) {
@@ -202,6 +212,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     rgblight_set_layer_state(5, layer_state_cmp(state, L_SWITCH));
     rgblight_set_layer_state(6, layer_state_cmp(state, L_MEDIA));
     rgblight_set_layer_state(7, layer_state_cmp(state, L_IDE));
+    rgblight_set_layer_state(8, layer_state_cmp(state, L_GAME_HW));
 
     return state;
 }
