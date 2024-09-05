@@ -74,7 +74,7 @@ static void print_status_narrow(void) {
             oled_write_P(PSTR("Num  "), false);
             break;
         case L_NUMPAD:
-            oled_write_P(PSTR("Nump "), false);
+            oled_write_P(PSTR("N-pad"), false);
             break;
         case L_MEDIA:
             oled_write_P(PSTR("Media"), false);
