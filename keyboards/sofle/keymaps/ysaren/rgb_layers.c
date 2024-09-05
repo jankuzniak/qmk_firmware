@@ -193,26 +193,27 @@ const rgblight_segment_t PROGMEM layer_game_hw_lights[] = RGBLIGHT_LAYER_SEGMENT
 
 const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
     layer_qwerty_lights,
+    layer_game_hw_lights,
     layer_symbol_lights,
     layer_navigation_lights,
     layer_number_lights,
     layer_numpad_lights,
     layer_switch_lights,
     layer_media_lights,
-    layer_ide_lights,
-    layer_game_hw_lights
+    layer_ide_lights
 );
 
 layer_state_t layer_state_set_user(layer_state_t state) {
-    rgblight_set_layer_state(0, layer_state_cmp(state|default_layer_state, L_QWERTY));
-    rgblight_set_layer_state(1, layer_state_cmp(state, L_SYMBOLS));
-    rgblight_set_layer_state(2, layer_state_cmp(state, L_NAVIGATION));
-    rgblight_set_layer_state(3, layer_state_cmp(state, L_NUMBERS));
-    rgblight_set_layer_state(4, layer_state_cmp(state, L_NUMPAD));
-    rgblight_set_layer_state(5, layer_state_cmp(state, L_SWITCH));
-    rgblight_set_layer_state(6, layer_state_cmp(state, L_MEDIA));
-    rgblight_set_layer_state(7, layer_state_cmp(state, L_IDE));
-    rgblight_set_layer_state(8, layer_state_cmp(state, L_GAME_HW));
+    int i = 0;
+    rgblight_set_layer_state(i++, layer_state_cmp(state|default_layer_state, L_QWERTY));
+    rgblight_set_layer_state(i++, layer_state_cmp(state, L_GAME_HW));
+    rgblight_set_layer_state(i++, layer_state_cmp(state, L_SYMBOLS));
+    rgblight_set_layer_state(i++, layer_state_cmp(state, L_NAVIGATION));
+    rgblight_set_layer_state(i++, layer_state_cmp(state, L_NUMBERS));
+    rgblight_set_layer_state(i++, layer_state_cmp(state, L_NUMPAD));
+    rgblight_set_layer_state(i++, layer_state_cmp(state, L_SWITCH));
+    rgblight_set_layer_state(i++, layer_state_cmp(state, L_MEDIA));
+    rgblight_set_layer_state(i++, layer_state_cmp(state, L_IDE));
 
     return state;
 }
