@@ -147,37 +147,6 @@
     {hand + led_index[row][4], 1, HSV_MODS}
 
 
-#define SET_NAVIGATION() \
-    {L_HAND + led_index[1][5], 1, HSV_FUNCTION}, \
-    {L_HAND + led_index[2][1], 1, HSV_FUNCTION}, \
-    {L_HAND + led_index[2][2], 1, HSV_NAVIGATION}, \
-    {L_HAND + led_index[2][3], 1, HSV_NAVIGATION}, \
-    {L_HAND + led_index[2][4], 1, HSV_NAVIGATION}, \
-    {L_HAND + led_index[2][5], 1, HSV_FUNCTION}, \
-    {L_HAND + led_index[3][1], 1, HSV_FUNCTION}, \
-    {L_HAND + led_index[3][2], 1, HSV_FUNCTION}, \
-    {L_HAND + led_index[3][3], 1, HSV_FUNCTION}, \
-    {L_HAND + led_index[3][4], 1, HSV_FUNCTION}, \
-    {L_HAND + led_index[3][5], 1, HSV_FUNCTION}, \
-    {R_HAND + led_index[1][0], 1, HSV_NAVIGATION}, \
-    {R_HAND + led_index[1][1], 1, HSV_NAVIGATION}, \
-    {R_HAND + led_index[1][2], 1, HSV_FUNCTION}, \
-    {R_HAND + led_index[1][3], 1, HSV_NAVIGATION}, \
-    {R_HAND + led_index[1][4], 1, HSV_FUNCTION}, \
-    {R_HAND + led_index[1][5], 1, HSV_NAVIGATION}, \
-    {R_HAND + led_index[2][0], 1, HSV_FUNCTION}, \
-    {R_HAND + led_index[2][1], 1, HSV_NAVIGATION}, \
-    {R_HAND + led_index[2][2], 1, HSV_NAVIGATION}, \
-    {R_HAND + led_index[2][3], 1, HSV_NAVIGATION}, \
-    {R_HAND + led_index[2][4], 1, HSV_NAVIGATION}, \
-    {R_HAND + led_index[2][5], 1, HSV_NAVIGATION}, \
-    {R_HAND + led_index[3][0], 1, HSV_FUNCTION}, \
-    {R_HAND + led_index[3][1], 1, HSV_FUNCTION}, \
-    {R_HAND + led_index[3][2], 1, HSV_BLACK}, \
-    {R_HAND + led_index[3][3], 1, HSV_FUNCTION}, \
-    {R_HAND + led_index[3][4], 1, HSV_LAYER_SWITCH}, \
-    {R_HAND + led_index[3][5], 1, HSV_BLACK}
-
 #define SET_BRACKETS() \
     {L_HAND + led_index[1][3], 3, HSV_ALPHAS_ACCENT}, \
     {L_HAND + led_index[3][4], 3, HSV_ALPHAS_ACCENT}
