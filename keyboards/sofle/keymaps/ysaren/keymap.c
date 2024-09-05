@@ -19,8 +19,8 @@
 
 #include QMK_KEYBOARD_H
 #include "ysaren.h"
-#include "features/num_word.c"
-#include "features/oneshot.c"
+#include "num_word.c"
+#include "oneshot.c"
 
 #include "layout.c"
 
