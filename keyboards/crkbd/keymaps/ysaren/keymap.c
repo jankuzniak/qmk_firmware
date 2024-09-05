@@ -19,8 +19,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include QMK_KEYBOARD_H
 #include "ysaren_crkbd.h"
 
-#include "features/num_word.c"
-#include "features/oneshot.c"
+#include "num_word.c"
+#include "oneshot.c"
 
 #include "layout.c"
 
