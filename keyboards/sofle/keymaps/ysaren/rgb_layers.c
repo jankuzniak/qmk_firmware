@@ -25,24 +25,8 @@ const rgblight_segment_t PROGMEM layer_qwerty_lights[] = RGBLIGHT_LAYER_SEGMENTS
     SET_LAYER_ID(HSV_ALPHAS)
 );
 
-// QWERTY_35,
-const rgblight_segment_t PROGMEM layer_qwerty_lights_35[] = RGBLIGHT_LAYER_SEGMENTS(
-    SET_ALL(HSV_ALPHAS),
-    SET_LAYER_ID(HSV_ALPHAS),
-    SET_NON_CORNE_LIGHTS(HSV_BLACK)
-);
-
 // _SYMBOL
 const rgblight_segment_t PROGMEM layer_symbol_lights[] = RGBLIGHT_LAYER_SEGMENTS(
-    SET_ALL(HSV_ALPHAS),
-    SET_HAND(R_HAND, HSV_BLACK),
-    SET_OSM(R_HAND, 2),
-    SET_BRACKETS(),
-    SET_LAYER_ID(HSV_MODS)
-);
-
-// _SYMBOL_35
-const rgblight_segment_t PROGMEM layer_symbol_lights_35[] = RGBLIGHT_LAYER_SEGMENTS(
     SET_ALL(HSV_ALPHAS),
     SET_HAND(R_HAND, HSV_BLACK),
     SET_OSM(R_HAND, 2),
@@ -58,14 +42,6 @@ const rgblight_segment_t PROGMEM layer_symbol_lights_35[] = RGBLIGHT_LAYER_SEGME
 
 // NAVIGATION
 const rgblight_segment_t PROGMEM layer_navigation_lights[] = RGBLIGHT_LAYER_SEGMENTS(
-    SET_ALL(HSV_ALPHAS),
-    SET_OSM(L_HAND, 1),
-    SET_NAVIGATION(),
-    SET_LAYER_ID(HSV_NAVIGATION)
-);
-
-// NAVIGATION_35
-const rgblight_segment_t PROGMEM layer_navigation_lights_35[] = RGBLIGHT_LAYER_SEGMENTS(
     SET_ALL(HSV_ALPHAS),
     SET_OSM(L_HAND, 1),
     SET_NAVIGATION(),
@@ -160,11 +136,6 @@ const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
     layer_qwerty_lights,
     layer_symbol_lights,
     layer_navigation_lights,
-
-    layer_qwerty_lights_35,
-    layer_symbol_lights_35,
-    layer_navigation_lights_35,
-
     layer_number_lights,
     layer_numpad_lights,
     layer_switch_lights,
@@ -176,14 +147,10 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     rgblight_set_layer_state(1, layer_state_cmp(state, L_SYMBOLS));
     rgblight_set_layer_state(2, layer_state_cmp(state, L_NAVIGATION));
 
-    rgblight_set_layer_state(3, layer_state_cmp(state|default_layer_state, L_QWERTY_35));
-    rgblight_set_layer_state(4, layer_state_cmp(state, L_SYMBOLS_35));
-    rgblight_set_layer_state(5, layer_state_cmp(state, L_NAVIGATION_35));
-
-    rgblight_set_layer_state(6, layer_state_cmp(state, L_NUMBERS));
-    rgblight_set_layer_state(7, layer_state_cmp(state, L_NUMPAD));
-    rgblight_set_layer_state(8, layer_state_cmp(state, L_SWITCH));
-    rgblight_set_layer_state(9, layer_state_cmp(state, L_MEDIA));
+    rgblight_set_layer_state(3, layer_state_cmp(state, L_NUMBERS));
+    rgblight_set_layer_state(4, layer_state_cmp(state, L_NUMPAD));
+    rgblight_set_layer_state(5, layer_state_cmp(state, L_SWITCH));
+    rgblight_set_layer_state(6, layer_state_cmp(state, L_MEDIA));
 
     return state;
 }

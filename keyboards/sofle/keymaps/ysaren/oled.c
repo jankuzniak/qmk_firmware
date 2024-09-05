@@ -44,10 +44,6 @@ static void print_status_narrow(void) {
             oled_write_ln_P(PSTR("Qwrt"), false);
             oled_write_ln_P(PSTR("3x6"), false);
             break;
-        case L_QWERTY_35:
-            oled_write_ln_P(PSTR("Qwrt"), false);
-            oled_write_ln_P(PSTR("3x5"), false);
-            break;
         default:
             oled_write_ln_P(PSTR("Undef"), false);
     }
@@ -56,15 +52,12 @@ static void print_status_narrow(void) {
     oled_write_ln_P(PSTR("LAYER"), false);
     switch (get_highest_layer(layer_state)) {
         case L_QWERTY:
-        case L_QWERTY_35:
             oled_write_P(PSTR("Base\n"), false);
             break;
         case L_SYMBOLS:
-        case L_SYMBOLS_35:
             oled_write_P(PSTR("Symb "), false);
             break;
         case L_NAVIGATION:
-        case L_NAVIGATION_35:
             oled_write_P(PSTR("Navi "), false);
             break;
         case L_SWITCH:
@@ -78,6 +71,9 @@ static void print_status_narrow(void) {
             break;
         case L_MEDIA:
             oled_write_P(PSTR("Media"), false);
+            break;
+        case L_IDE:
+            oled_write_P(PSTR("IDE  "), false);
             break;
         default:
             oled_write_ln_P(PSTR("Undef"), false);

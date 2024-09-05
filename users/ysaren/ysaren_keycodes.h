@@ -25,11 +25,6 @@ enum userspace_custom_keycodes {
     KC_NAVI,
     KC_SWITCH,
 
-    KC_QWERTY_35,
-    KC_SYMBOLS_35,
-    KC_NAVI_35,
-    KC_SWITCH_35,
-
     OS_SFT,
     OS_CTL,
     OS_LALT,
