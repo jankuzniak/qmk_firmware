@@ -40,6 +40,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                    _______,  KC_SYMBOLS,  _______,         _______,  KC_NUMWORD,  _______
 ),
 
+[L_GAME_HW] = LAYOUT(
+   XXXXXXX,  KC_Q,     XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,              XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
+   XXXXXXX,  KC_1,     KC_2,     KC_3,     KC_4,     KC_5,                 XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
+   XXXXXXX,  KC_A,     XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,              XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
+                                 _______,  KC_Q,     _______,              _______,  _______,  _______
+),
+
 [L_SYMBOLS] = LAYOUT(
     _______,  KC_EXLM,  KC_AT,    KC_LCBR,  KC_RCBR,  KC_PIPE,             KC_PLUS,   KC_AMPR,  KC_ASTR,  XXXXXXX,  XXXXXXX,  XXXXXXX,
     KC_LSFT,  KC_HASH,  KC_DLR,   KC_LPRN,  KC_RPRN,  KC_GRV,              KC_MINUS,  OS_CTL,   OS_SFT,   OS_RALT,  OS_GUI,   XXXXXXX,
@@ -62,10 +69,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [L_SWITCH] = LAYOUT(
-    _______,   KC_F1,    KC_F2,    KC_F3,      KC_F4,    KC_F5,            KC_F6,     KC_F7,      KC_F8,      KC_F9,    KC_F10,   KC_F11,
-    KC_LSFT,  XXXXXXX,  XXXXXXX,  XXXXXXX,    XXXXXXX,  XXXXXXX,           XXXXXXX,   KC_QWERTY,  KC_QWERTY,  XXXXXXX,  XXXXXXX,  KC_F12,
-    _______,  KC_PSCR,  KC_SCRL,  G(KC_PAUS), XXXXXXX,  XXXXXXX,           F_ZONE_1,  F_ZONE_2,   KC_APP,     XXXXXXX,  XXXXXXX,  XXXXXXX,
-                                    _______,  _______,  _______,           _______,   _______,    _______
+    _______,  KC_F1,          KC_F2,    KC_F3,      KC_F4,    KC_F5,       KC_F6,     KC_F7,      KC_F8,      KC_F9,    KC_F10,   KC_F11,
+    KC_LSFT,  TG(L_GAME_HW),  XXXXXXX,  XXXXXXX,    XXXXXXX,  XXXXXXX,     XXXXXXX,   KC_QWERTY,  KC_QWERTY,  XXXXXXX,  XXXXXXX,  KC_F12,
+    _______,  KC_PSCR,        KC_SCRL,  G(KC_PAUS), XXXXXXX,  XXXXXXX,     F_ZONE_1,  F_ZONE_2,   KC_APP,     XXXXXXX,  XXXXXXX,  XXXXXXX,
+                                        _______,    _______,  _______,     _______,   _______,    _______
 ),
 
 // LSA(KC_4 .. KC_9) are to handled by autohotkey
