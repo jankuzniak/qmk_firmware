@@ -29,57 +29,33 @@ static void render_logo(void) {
     oled_write_P(qmk_logo, false);
 }
 
+static void print_layer(struct Layer layer) {
+    oled_write_ln_P(PSTR(layer.name), layer.inverted);
+}
+
 static void print_status_narrow(void) {
     // Print current mode
-    oled_write_P(PSTR("\n\n"), false);
+    // oled_write_P(PSTR("\n\n"), false);
+    oled_clear();
     oled_write_ln_P(PSTR("YSRN"), false);
-
-    oled_write_ln_P(PSTR(""), false);
+    oled_write_ln_P(PSTR("\n"), false);
 
 	//snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Undef-%ld", layer_state)
 
-
-    switch (get_highest_layer(default_layer_state)) {
-        case L_QWERTY:
-            oled_write_ln_P(PSTR("Qwrt"), false);
-            oled_write_ln_P(PSTR("3x6"), false);
-            break;
-        default:
-            oled_write_ln_P(PSTR("Undef"), false);
+    // "base" layers
+    if (layer_state_is(layers[1].layer)) { // L_GAME_HW
+        print_layer(layers[1]);
+    } else {
+        print_layer(layers[0]);
     }
-    oled_write_P(PSTR("\n\n"), false);
-    // Print current layer
-    oled_write_ln_P(PSTR("LAYER"), false);
-    switch (get_highest_layer(layer_state)) {
-        case L_QWERTY:
-            oled_write_P(PSTR("Base\n"), false);
-            break;
-        case L_GAME_HW:
-            oled_write_P(PSTR("Hero "), false);
-            break;
-        case L_SYMBOLS:
-            oled_write_P(PSTR("Symb "), false);
-            break;
-        case L_NAVIGATION:
-            oled_write_P(PSTR("Navi "), false);
-            break;
-        case L_SWITCH:
-            oled_write_P(PSTR("Swit "), false);
-            break;
-        case L_NUMBERS:
-            oled_write_P(PSTR("Num  "), false);
-            break;
-        case L_NUMPAD:
-            oled_write_P(PSTR("N-pad"), false);
-            break;
-        case L_MEDIA:
-            oled_write_P(PSTR("Media"), false);
-            break;
-        case L_IDE:
-            oled_write_P(PSTR("IDE  "), false);
-            break;
-        default:
-            oled_write_ln_P(PSTR("Undef"), false);
+
+    oled_write_ln_P(PSTR("\n"), false);
+
+    for (int i = 2; i < LAYERS_COUNT; i++) {
+        struct Layer layer = layers[i];
+        if (layer_state_is(layer.layer)) {
+            print_layer(layer);
+        }
     }
 }
 
@@ -96,5 +72,23 @@ bool oled_task_user(void) {
     } else {
         render_logo();
     }
+    return false;
+}
+
+void oled_render_boot(bool bootloader) {
+    oled_clear();
+    if (bootloader) {
+        oled_write_P(PSTR("\n\nAwait"), true);
+        oled_write_P(PSTR("New\n"),     true);
+        oled_write_P(PSTR("Firmw"),     true);
+    } else {
+        oled_write_P(PSTR("Rebooting"), false);
+    }
+
+    oled_render_dirty(true);
+}
+
+bool shutdown_user(bool jump_to_bootloader) {
+    oled_render_boot(jump_to_bootloader);
     return false;
 }
