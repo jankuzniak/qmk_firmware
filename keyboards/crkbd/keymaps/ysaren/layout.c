@@ -19,6 +19,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                   KC_LALT,  KC_SPC,   KC_NAVI,         KC_SYMBOLS,  KC_BSPC,  KC_RALT
 ),
 
+[L_GAME_HW] = LAYOUT(
+   XXXXXXX,  KC_Q,     XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,              XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
+   KC_LSFT,  KC_1,     KC_2,     KC_3,     KC_4,     KC_5,                 XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
+   XXXXXXX,  KC_A,     XXXXXXX,  XXXXXXX,  XXXXXXX,  KC_Q,                 XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
+                                 _______,  KC_Q,     _______,              _______,  _______,  _______
+),
+
 /*
  * Navigation
  * |-------+--------+--------+--------+--------+--------|                    |---------+--------+--------+--------+--------+--------|
@@ -38,13 +45,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     MO(L_IDE), C(KC_A),  KC_DEL,   KC_ESC,   KC_ENT,      KC_TO_PASTE,     KC_END,     KC_LEFT,    KC_DOWN,   KC_RGHT,   KC_PGDN,  C(KC_PLUS),
     _______,   C(KC_Z),  C(KC_X),  C(KC_C),  C(KC_V),     KC_DITTO,        XXXXXXX,  TG_NUMPAD,  C(KC_DOWN),  XXXXXXX,   C(KC_0),  C(KC_MINUS),
                                    _______,  KC_SYMBOLS,  _______,         _______,  KC_NUMWORD,  _______
-),
-
-[L_GAME_HW] = LAYOUT(
-   XXXXXXX,  KC_Q,     XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,              XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
-   XXXXXXX,  KC_1,     KC_2,     KC_3,     KC_4,     KC_5,                 XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
-   XXXXXXX,  KC_A,     XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,              XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
-                                 _______,  KC_Q,     _______,              _______,  _______,  _______
 ),
 
 [L_SYMBOLS] = LAYOUT(
@@ -73,7 +73,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_LSFT,  TG(L_GAME_HW),  XXXXXXX,  XXXXXXX,    XXXXXXX,  XXXXXXX,     XXXXXXX,   KC_QWERTY,  KC_QWERTY,  XXXXXXX,  XXXXXXX,  KC_F12,
     _______,  KC_PSCR,        KC_SCRL,  G(KC_PAUS), XXXXXXX,  XXXXXXX,     F_ZONE_1,  F_ZONE_2,   KC_APP,     XXXXXXX,  XXXXXXX,  XXXXXXX,
                                         _______,    _______,  _______,     _______,   _______,    _______
-),
+),\
 
 // LSA(KC_4 .. KC_9) are to handled by autohotkey
 [L_MEDIA] = LAYOUT(
