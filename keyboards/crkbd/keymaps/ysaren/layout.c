@@ -93,37 +93,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 };
 
-oneshot_state os_shft_state = os_up_unqueued;
-oneshot_state os_ctrl_state = os_up_unqueued;
-oneshot_state os_lalt_state = os_up_unqueued;
-oneshot_state os_ralt_state = os_up_unqueued;
-oneshot_state os_cmd_state  = os_up_unqueued;
-
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     // uprintf("KL: kc: 0x%04X, col: %2u, row: %2u, pressed: %u, time: %5u, int: %u, count: %u\n", keycode, record->event.key.col, record->event.key.row, record->event.pressed, record->event.time, record->tap.interrupted, record->tap.count);
 
     process_record_num_word(keycode, record);
-
-    update_oneshot(
-        &os_shft_state, KC_LSFT, OS_SFT,
-        keycode, record
-    );
-    update_oneshot(
-        &os_ctrl_state, KC_LCTL, OS_CTL,
-        keycode, record
-    );
-    update_oneshot(
-        &os_lalt_state, KC_LALT, OS_LALT,
-        keycode, record
-    );
-    update_oneshot(
-        &os_ralt_state, KC_RALT, OS_RALT,
-        keycode, record
-    );
-    update_oneshot(
-        &os_cmd_state, KC_LCMD, OS_GUI,
-        keycode, record
-    );
+    process_record_oneshot(keycode, record);
 
     switch (keycode) {
         case KC_QWERTY:
@@ -157,32 +131,4 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return false;
     }
     return true;
-}
-
-bool is_oneshot_cancel_key(uint16_t keycode) {
-    // unused, right?
-    switch (keycode) {
-        case KC_SYMBOLS:
-        case KC_NAVI:
-            return true;
-        default:
-            return false;
-    }
-}
-
-bool is_oneshot_ignored_key(uint16_t keycode) {
-    switch (keycode) {
-        case KC_SYMBOLS:
-        case KC_NAVI:
-        case KC_SWITCH:
-        case KC_LSFT:
-        case OS_SFT:
-        case OS_CTL:
-        case OS_LALT:
-        case OS_RALT:
-        case OS_GUI:
-            return true;
-        default:
-            return false;
-    }
 }

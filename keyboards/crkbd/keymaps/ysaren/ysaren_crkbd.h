@@ -4,6 +4,7 @@
 #include "ysaren_layers.h"
 #include "num_word.h"
 #include "oneshot.h"
+#include "ysaren_oneshot.h"
 
 #include "rgb_layers.h"
 

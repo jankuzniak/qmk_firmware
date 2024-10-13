@@ -21,6 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "num_word.c"
 #include "oneshot.c"
+#include "ysaren_oneshot.c"
 
 #include "layout.c"
 
