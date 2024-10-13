@@ -49,9 +49,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [L_SYMBOLS] = LAYOUT(
     _______,  KC_EXLM,  KC_AT,    KC_LCBR,  KC_RCBR,  KC_PIPE,             KC_PLUS,   KC_AMPR,  KC_ASTR,  XXXXXXX,  XXXXXXX,  XXXXXXX,
-    KC_LSFT,  KC_HASH,  KC_DLR,   KC_LPRN,  KC_RPRN,  KC_GRV,              KC_MINUS,  OS_CTL,   OS_SFT,   OS_RALT,  OS_GUI,   XXXXXXX,
+    _______,  KC_HASH,  KC_DLR,   KC_LPRN,  KC_RPRN,  KC_GRV,              KC_MINUS,  OS_CTL,   OS_SFT,   OS_RALT,  OS_GUI,   XXXXXXX,
     _______,  KC_PERC,  KC_CIRC,  KC_LBRC,  KC_RBRC,  KC_TILDE,            KC_EQUAL,  XXXXXXX,  KC_LABK,  KC_RABK,  XXXXXXX,  XXXXXXX,
-                                     _______, _______, _______,            _______,   KC_BSPC,  _______
+                                  _______,  _______,  _______,             _______,   _______,  _______
 ),
 
 [L_NUMPAD] = LAYOUT(
@@ -62,17 +62,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [L_NUMBERS] = LAYOUT(
-    _______,  KC_EXLM,  KC_AT,    KC_HASH,  KC_DLR,   KC_PERC,             KC_CIRC, KC_AMPR,   KC_ASTR,  KC_LPRN,  KC_RPRN,     KC_UNDS,
-    _______,  KC_1,     KC_2,     KC_3,     KC_4,     KC_5,                KC_6,    KC_7,      KC_8,     KC_9,     KC_0,        KC_MINS,
-    _______,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,             KC_EQL,  KC_PPLS,   KC_COMM,  KC_DOT,   KC_PSLS,     KC_PAST,
-                                  _______,  _______,  KC_NAVI,             _______,  _______,   _______
+    _______,  KC_EXLM,  KC_AT,    KC_HASH,  KC_DLR,   KC_PERC,             KC_CIRC,  KC_AMPR,  KC_ASTR,  KC_LPRN,  KC_RPRN,  KC_UNDS,
+    _______,  KC_1,     KC_2,     KC_3,     KC_4,     KC_5,                KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,
+    _______,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,             KC_EQL,   KC_PPLS,  KC_COMM,  KC_DOT,   KC_PSLS,  KC_PAST,
+                                  _______,  _______,  KC_NAVI,             _______,  _______,  _______
 ),
 
+ // need to re-establish left shift and backspace due to L_NAVIGATION
 [L_SWITCH] = LAYOUT(
-    _______,  KC_F1,          KC_F2,    KC_F3,      KC_F4,    KC_F5,       KC_F6,     KC_F7,      KC_F8,      KC_F9,    KC_F10,   KC_F11,
-    KC_LSFT,  TG(L_GAME_HW),  XXXXXXX,  XXXXXXX,    XXXXXXX,  XXXXXXX,     XXXXXXX,   KC_QWERTY,  KC_QWERTY,  XXXXXXX,  XXXXXXX,  KC_F12,
-    _______,  KC_PSCR,        KC_SCRL,  G(KC_PAUS), XXXXXXX,  XXXXXXX,     F_ZONE_1,  F_ZONE_2,   KC_APP,     XXXXXXX,  XXXXXXX,  XXXXXXX,
-                                        _______,    _______,  _______,     _______,   _______,    _______
+    _______,  KC_F1,          KC_F2,    KC_F3,       KC_F4,    KC_F5,       KC_F6,     KC_F7,      KC_F8,      KC_F9,    KC_F10,   KC_F11,
+    KC_LSFT,  TG(L_GAME_HW),  XXXXXXX,  XXXXXXX,     XXXXXXX,  XXXXXXX,     XXXXXXX,   KC_QWERTY,  KC_QWERTY,  XXXXXXX,  XXXXXXX,  KC_F12,
+    _______,  KC_PSCR,        KC_SCRL,  G(KC_PAUS),  XXXXXXX,  XXXXXXX,     F_ZONE_1,  F_ZONE_2,   KC_APP,     XXXXXXX,  XXXXXXX,  XXXXXXX,
+                                        _______,     _______,  _______,     _______,   KC_BSPC,    _______
 ),\
 
 // LSA(KC_4 .. KC_9) are to handled by autohotkey
@@ -80,14 +81,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     EE_CLR,     XXXXXXX,  XXXXXXX,  XXXXXXX,  LSA(KC_5),  LSA(KC_4),       XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  QK_BOOT,
     QK_REBOOT,  XXXXXXX,  XXXXXXX,  XXXXXXX,  LSA(KC_9),  LSA(KC_8),       XXXXXXX,  XXXXXXX,  XXXXXXX,  G(KC_L),  _______,  KC_SYSTEM_SLEEP,
     XXXXXXX,    XXXXXXX,  XXXXXXX,  XXXXXXX,  LSA(KC_7),  LSA(KC_6),       XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
-                                    XXXXXXX,  XXXXXXX,    XXXXXXX,         XXXXXXX,  XXXXXXX,  XXXXXXX
+                                    _______,  _______,    _______,         _______,  _______,  _______
 ),
 
 [L_IDE] = LAYOUT(
-   XXXXXXX,  XXXXXXX,  XXXXXXX,     XXXXXXX,  A(S(KC_R)),  XXXXXXX,        XXXXXXX,  XXXXXXX,    A(S(KC_I)),  XXXXXXX,     XXXXXXX,  C(KC_F11),
+   _______,  XXXXXXX,  XXXXXXX,     XXXXXXX,  A(S(KC_R)),  XXXXXXX,        XXXXXXX,  XXXXXXX,    A(S(KC_I)),  XXXXXXX,     XXXXXXX,  C(KC_F11),
    _______,  XXXXXXX,  A(S(KC_S)),  XXXXXXX,  C(S(KC_F)),  XXXXXXX,        XXXXXXX,  XXXXXXX,    XXXXXXX,     A(S(KC_L)),  XXXXXXX,  XXXXXXX,
-   XXXXXXX,  XXXXXXX,  A(S(KC_X)),  XXXXXXX,  XXXXXXX,     XXXXXXX,        XXXXXXX,  A(S(KC_M)), XXXXXXX,     XXXXXXX,     XXXXXXX,  XXXXXXX,
-                                    XXXXXXX,  XXXXXXX,     XXXXXXX,        XXXXXXX,  XXXXXXX,    XXXXXXX
+   _______,  XXXXXXX,  A(S(KC_X)),  XXXXXXX,  XXXXXXX,     XXXXXXX,        XXXXXXX,  A(S(KC_M)), XXXXXXX,     XXXXXXX,     XXXXXXX,  XXXXXXX,
+                                    _______,  _______,     _______,        _______,  KC_BSPC,    _______
 ),
 
 };

@@ -77,9 +77,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [L_SYMBOLS] = LAYOUT(
     _______,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,                           XXXXXXX,   XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
     _______,  KC_EXLM,  KC_AT,    KC_LCBR,  KC_RCBR,  KC_PIPE,                           KC_PLUS,   KC_AMPR,  KC_ASTR,  XXXXXXX,  XXXXXXX,  XXXXXXX,
-    KC_LSFT,  KC_HASH,  KC_DLR,   KC_LPRN,  KC_RPRN,  KC_GRV,                            KC_MINUS,  OS_CTL,   OS_SFT,   OS_RALT,  OS_GUI,   XXXXXXX,
+    _______,  KC_HASH,  KC_DLR,   KC_LPRN,  KC_RPRN,  KC_GRV,                            KC_MINUS,  OS_CTL,   OS_SFT,   OS_RALT,  OS_GUI,   XXXXXXX,
     _______,  KC_PERC,  KC_CIRC,  KC_LBRC,  KC_RBRC,  KC_TILDE,  _______,      _______,  KC_EQUAL,  XXXXXXX,  KC_LABK,  KC_RABK,  XXXXXXX,  XXXXXXX,
-                        XXXXXXX,  XXXXXXX,  _______,  _______,   _______,      _______,  KC_BSPC,   _______,  XXXXXXX,  XXXXXXX
+                        XXXXXXX,  XXXXXXX,  _______,  _______,   _______,      _______,  _______,   _______,  XXXXXXX,  XXXXXXX
 ),
 
 /*
@@ -114,12 +114,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                         XXXXXXX,  XXXXXXX,  _______,  _______,  KC_NAVI,      _______,  _______,  _______,  XXXXXXX,  XXXXXXX
 ),
 
+ // need to re-establish left shift and backspace due to L_NAVIGATION
 [L_SWITCH] = LAYOUT(
     XXXXXXX,  XXXXXXX,        XXXXXXX,  XXXXXXX,    XXXXXXX,  XXXXXXX,                          XXXXXXX,   XXXXXXX,    XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
     _______,  KC_F1,          KC_F2,    KC_F3,      KC_F4,    KC_F5,                            KC_F6,     KC_F7,      KC_F8,    KC_F9,    KC_F10,   KC_F11,
     KC_LSFT,  TG(L_GAME_HW),  XXXXXXX,  XXXXXXX,    XXXXXXX,  XXXXXXX,                          XXXXXXX,   KC_QWERTY,  XXXXXXX,  XXXXXXX,  XXXXXXX,  KC_F12,
     _______,  KC_PSCR,        KC_SCRL,  G(KC_PAUS), XXXXXXX,  XXXXXXX,  _______,      _______,  F_ZONE_1,  F_ZONE_2,   KC_APP,   XXXXXXX,  XXXXXXX,  XXXXXXX,
-                              XXXXXXX,  XXXXXXX,    _______,  _______,  _______,      _______,  _______,   _______,    XXXXXXX,  XXXXXXX
+                              XXXXXXX,  XXXXXXX,    _______,  _______,  _______,      _______,  KC_BSPC,   _______,    XXXXXXX,  XXXXXXX
 ),
 
 // LSA(KC_4 .. KC_9) are to handled by autohotkey
@@ -133,10 +134,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [L_IDE] = LAYOUT(
    XXXXXXX,  C(KC_1),  XXXXXXX,     XXXXXXX,  XXXXXXX,     XXXXXXX,                          XXXXXXX,  XXXXXXX,     XXXXXXX,     XXXXXXX,     XXXXXXX,  XXXXXXX,
-   XXXXXXX,  XXXXXXX,  XXXXXXX,     XXXXXXX,  A(S(KC_R)),  XXXXXXX,                          XXXXXXX,  XXXXXXX,     A(S(KC_I)),  XXXXXXX,     XXXXXXX,  C(KC_F11),
+   _______,  XXXXXXX,  XXXXXXX,     XXXXXXX,  A(S(KC_R)),  XXXXXXX,                          XXXXXXX,  XXXXXXX,     A(S(KC_I)),  XXXXXXX,     XXXXXXX,  C(KC_F11),
    _______,  XXXXXXX,  A(S(KC_S)),  XXXXXXX,  C(S(KC_F)),  XXXXXXX,                          XXXXXXX,  XXXXXXX,     XXXXXXX,     A(S(KC_L)),  XXXXXXX,  XXXXXXX,
-   XXXXXXX,  XXXXXXX,  A(S(KC_X)),  XXXXXXX,  XXXXXXX,     XXXXXXX,  XXXXXXX,      XXXXXXX,  XXXXXXX,  A(S(KC_M)),  XXXXXXX,     XXXXXXX,     XXXXXXX,  XXXXXXX,
-                       XXXXXXX,     XXXXXXX,  _______,     _______,  _______,      _______,  _______,  _______,     XXXXXXX,     XXXXXXX
+   _______,  XXXXXXX,  A(S(KC_X)),  XXXXXXX,  XXXXXXX,     XXXXXXX,  XXXXXXX,      XXXXXXX,  XXXXXXX,  A(S(KC_M)),  XXXXXXX,     XXXXXXX,     XXXXXXX,  XXXXXXX,
+                       XXXXXXX,     XXXXXXX,  _______,     _______,  _______,      _______,  KC_BSPC,  _______,     XXXXXXX,     XXXXXXX
 ),
 
 };
