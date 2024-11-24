@@ -25,7 +25,7 @@ void process_record_oneshot(uint16_t keycode, keyrecord_t *record) {
 
 bool is_oneshot_cancel_key(uint16_t keycode) {
     switch (keycode) {
-        case KC_SYMBOLS: // ignored
+        //case KC_SYMBOLS: // ignored
         case KC_NAVI:    // ignored
             return true;
         default:
