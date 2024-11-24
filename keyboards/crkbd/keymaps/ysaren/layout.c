@@ -5,6 +5,7 @@
 
 #define F_ZONE_1 LCAG(KC_1)
 #define F_ZONE_2 LCAG(KC_2)
+#define F_ZONE_3 LCAG(KC_3)
 
 #define TG_NUMPAD   TG(L_NUMPAD)
 #define MO_NUMBER   MO(L_NUMBERS)
@@ -72,7 +73,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [L_SWITCH] = LAYOUT(
     _______,  KC_F1,          KC_F2,    KC_F3,       KC_F4,    KC_F5,       KC_F6,     KC_F7,      KC_F8,      KC_F9,    KC_F10,   KC_F11,
     KC_LSFT,  TG(L_GAME_HW),  XXXXXXX,  XXXXXXX,     XXXXXXX,  XXXXXXX,     XXXXXXX,   KC_QWERTY,  KC_QWERTY,  XXXXXXX,  XXXXXXX,  KC_F12,
-    _______,  KC_PSCR,        KC_SCRL,  G(KC_PAUS),  XXXXXXX,  XXXXXXX,     F_ZONE_1,  F_ZONE_2,   KC_APP,     XXXXXXX,  XXXXXXX,  XXXXXXX,
+    _______,  KC_PSCR,        KC_SCRL,  G(KC_PAUS),  XXXXXXX,  XXXXXXX,     F_ZONE_1,  F_ZONE_2,   F_ZONE_3,   KC_APP,   XXXXXXX,  XXXXXXX,
                                         _______,     _______,  _______,     _______,   KC_BSPC,    _______
 ),\
 
