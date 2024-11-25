@@ -34,6 +34,14 @@ static void print_mods_short(void) {
     print_mod((mod_state & MOD_MASK_ALT  ) > 0, "A", true);
     print_mod((mod_state & MOD_MASK_SHIFT) > 0, "S", true);
     print_mod((mod_state & MOD_MASK_CTRL ) > 0, "C", true);
+
+    oled_write_ln_P(PSTR("\n"), false);
+
+    led_t ledState = host_keyboard_led_state();
+    print_mod(ledState.num_lock,    "N", true);
+    print_mod(ledState.caps_lock,   "C", true);
+    print_mod(ledState.scroll_lock, "S", true);
+
 }
 
 static void print_mods_long(void) {
@@ -46,6 +54,21 @@ static void print_mods_long(void) {
     print_mod((mod_state & MOD_MASK_ALT  ) > 0, "ALT  ", false);
     print_mod((mod_state & MOD_MASK_SHIFT) > 0, "SHIFT", false);
     print_mod((mod_state & MOD_MASK_CTRL ) > 0, "CTRL ", false);
+
+    oled_write_ln_P(PSTR("\n"), false);
+
+    // keyboard leds
+    //led_t ledState = host_keyboard_led_state();
+    // hack - I'm trying to get capslock for the right-half of a split keyboard
+    // TODO: Not working on right half
+    /*
+    host_driver_t *driver = host_get_driver();
+    led_t ledState = (led_t) (*driver->keyboard_leds)();
+
+    print_mod(ledState.num_lock,    "NUM  ", false);
+    print_mod(ledState.caps_lock,   "CAPS ", false);
+    print_mod(ledState.scroll_lock, "SCRL ", false);
+    */
 }
 
 static void print_layer(struct Layer layer) {
@@ -64,7 +87,7 @@ static void print_status_narrow(void) {
         print_layer(layers[0]);
     }
 
-    oled_write_ln_P(PSTR("\n"), false);
+    //oled_write_ln_P(PSTR("\n"), false);
 
     int current_line = 4;
 

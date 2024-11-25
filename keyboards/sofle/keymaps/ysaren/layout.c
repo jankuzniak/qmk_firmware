@@ -15,16 +15,17 @@
 
 #define TG_NUMPAD   TG(L_NUMPAD)
 #define MO_NUMBER   MO(L_NUMBERS)
-#define COLON_MEDIA LT(L_MEDIA,KC_SCLN)
+#define COL_MED     LT(L_MEDIA,KC_SCLN)
+#define KC_NLCK     KC_NUM_LOCK
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [L_QWERTY] = LAYOUT(
-    KC_ESC,   KC_1,  KC_2,     KC_3,     KC_4,     KC_5,                              KC_6,    KC_7,     KC_8,     KC_9,     KC_0,       KC_MINUS,
-    KC_TAB,   KC_Q,  KC_W,     KC_E,     KC_R,     KC_T,                              KC_Y,    KC_U,     KC_I,     KC_O,     KC_P,       MO(L_IDE),
-    KC_LSFT,  KC_A,  KC_S,     KC_D,     KC_F,     KC_G,                              KC_H,    KC_J,     KC_K,     KC_L,   COLON_MEDIA,  KC_QUOT,
-    KC_LCTL,  KC_Z,  KC_X,     KC_C,     KC_V,     KC_B,   KC_SCRSHT,     KC_MUTE,    KC_N,    KC_M,    KC_COMM,  KC_DOT,   KC_SLASH,    KC_BACKSLASH,
-                    XXXXXXX,  XXXXXXX,  KC_LALT,  KC_SPC,  KC_NAVI,       KC_SYMBOLS, KC_BSPC, KC_RALT, XXXXXXX,  KC_RCTL
+    KC_ESC,   KC_1,  KC_2,     KC_3,     KC_4,     KC_5,                            KC_6,     KC_7,     KC_8,     KC_9,    KC_0,      KC_MINUS,
+    KC_TAB,   KC_Q,  KC_W,     KC_E,     KC_R,     KC_T,                            KC_Y,     KC_U,     KC_I,     KC_O,    KC_P,      MO(L_IDE),
+    KC_LSFT,  KC_A,  KC_S,     KC_D,     KC_F,     KC_G,                            KC_H,     KC_J,     KC_K,     KC_L,    COL_MED,   KC_QUOT,
+    KC_LCTL,  KC_Z,  KC_X,     KC_C,     KC_V,     KC_B,   KC_SCRSHT,     KC_MUTE,  KC_N,     KC_M,     KC_COMM,  KC_DOT,  KC_SLASH,  KC_BACKSLASH,
+                    XXXXXXX,  XXXXXXX,  KC_LALT,  KC_SPC,  KC_NAVI,       KC_SYMB,  KC_BSPC,  KC_RALT,  XXXXXXX,  KC_RCTL
 ),
 
 
@@ -57,7 +58,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______,    OS_GUI,   OS_LALT,  OS_SFT,   OS_CTL,   C(KC_T),                              KC_HOME,   C(KC_LEFT),     KC_UP,   C(KC_RIGHT),  KC_PGUP,    KC_INS,
     MO(L_IDE),  C(KC_A),  KC_DEL,   KC_ESC,   KC_ENT,   KC_TO_PASTE,                          KC_END,      KC_LEFT,      KC_DOWN,   KC_RGHT,    KC_PGDN,  C(KC_PLUS),
     _______,    C(KC_Z),  C(KC_X),  C(KC_C),  C(KC_V),  KC_DITTO,     _______,      _______,  XXXXXXX,     TG_NUMPAD,  C(KC_DOWN),  XXXXXXX,    C(KC_0),  C(KC_MINUS),
-                          XXXXXXX,  XXXXXXX,  _______,  KC_SYMBOLS,   _______,      _______,  KC_NUMWORD,  _______,      XXXXXXX,   XXXXXXX
+                          XXXXXXX,  XXXXXXX,  _______,  KC_SYMB,   _______,      _______,  KC_NUMWORD,  _______,      XXXXXXX,   XXXXXXX
 ),
 
 /*
@@ -120,7 +121,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX,  XXXXXXX,        XXXXXXX,  XXXXXXX,    XXXXXXX,  XXXXXXX,                          XXXXXXX,   XXXXXXX,    XXXXXXX,   XXXXXXX,  XXXXXXX,  XXXXXXX,
     _______,  KC_F1,          KC_F2,    KC_F3,      KC_F4,    KC_F5,                            KC_F6,     KC_F7,      KC_F8,     KC_F9,    KC_F10,   KC_F11,
     KC_LSFT,  TG(L_GAME_HW),  XXXXXXX,  XXXXXXX,    XXXXXXX,  XXXXXXX,                          XXXXXXX,   OS_CTL,     OS_SFT,    OS_LALT,  OS_GUI,   KC_F12,
-    _______,  KC_PSCR,        KC_SCRL,  G(KC_PAUS), XXXXXXX,  XXXXXXX,  _______,      _______,  F_ZONE_1,  F_ZONE_2,   F_ZONE_3,  KC_APP,   XXXXXXX,  XXXXXXX,
+    _______,  KC_PSCR,        KC_SCRL,  G(KC_PAUS), KC_NLCK,  XXXXXXX,  _______,      _______,  F_ZONE_1,  F_ZONE_2,   F_ZONE_3,  KC_APP,   XXXXXXX,  XXXXXXX,
                               XXXXXXX,  XXXXXXX,    _______,  _______,  _______,      _______,  KC_BSPC,   _______,    XXXXXXX,   XXXXXXX
 ),
 
@@ -163,7 +164,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             update_tri_layer(L_NAVIGATION, L_SYMBOLS, L_SWITCH);
             return false;
-        case KC_SYMBOLS:
+        case KC_SYMB:
             if (record->event.pressed) {
                 layer_on(L_SYMBOLS);
             } else {
