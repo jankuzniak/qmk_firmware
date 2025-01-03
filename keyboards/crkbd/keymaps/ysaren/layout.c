@@ -57,9 +57,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [L_NUMPAD] = LAYOUT(
-    _______,  KC_RALT,  KC_F2,    KC_ESC,   KC_F4,    XXXXXXX,         KC_KP_PLUS,   KC_P7,    KC_P8,  KC_P9,  KC_KP_MINUS,     XXXXXXX,
-    _______,  KC_LPRN,  KC_DEL,   KC_UP,    KC_ENT,   KC_RPRN,         KC_KP_MINUS,  KC_P4,    KC_P5,  KC_P6,  KC_KP_ASTERISK,  KC_ENT,
-    _______,  KC_LABK,  KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_RABK,         KC_EQUAL,     KC_P1,    KC_P2,  KC_P3,  KC_KP_SLASH,     KC_DOT,
+    _______,  KC_RALT,  KC_F2,    KC_UP,    KC_F4,    XXXXXXX,         KC_KP_PLUS,   KC_P7,    KC_P8,  KC_P9,  KC_KP_MINUS,     XXXXXXX,
+    _______,  KC_LPRN,  KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_RPRN,         KC_KP_MINUS,  KC_P4,    KC_P5,  KC_P6,  KC_KP_ASTERISK,  KC_ENT,
+    _______,  KC_LABK,  KC_DEL,   KC_ESC,   KC_ENT,   KC_RABK,         KC_EQUAL,     KC_P1,    KC_P2,  KC_P3,  KC_KP_SLASH,     KC_DOT,
                                   _______,  _______,  TG_NUMPAD,       _______,      _______,  KC_KP_0
 ),
 
