@@ -39,6 +39,7 @@ bool is_oneshot_ignored_key(uint16_t keycode) {
         case KC_NAVI:
         case KC_SWITCH:
         case KC_LSFT:
+        case KC_NUMWORD:
         case OS_SFT:
         case OS_CTL:
         case OS_LALT:
@@ -49,3 +50,4 @@ bool is_oneshot_ignored_key(uint16_t keycode) {
             return false;
     }
 }
+    
