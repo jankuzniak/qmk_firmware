@@ -34,7 +34,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    XXXXXXX,  KC_Q,       KC_W,     XXXXXXX,  XXXXXXX,  XXXXXXX,                          XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
    KC_LSFT,  KC_1,       KC_2,     KC_3,     KC_4,     KC_5,                             XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
    XXXXXXX,  KC_A,       XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,      XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
-                       XXXXXXX,  XXXXXXX,  _______,  KC_Q,     _______,      _______,  _______,  _______,  XXXXXXX,  XXXXXXX
+                         XXXXXXX,  XXXXXXX,  _______,  KC_Q,     _______,      _______,  _______,  _______,  XXXXXXX,  XXXXXXX
 ),
 
 /*
@@ -149,6 +149,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
     process_record_num_word(keycode, record);
     process_record_oneshot(keycode, record);
+
+    if (record->event.pressed) {
+        update_last_key(keycode);
+    }
 
     switch (keycode) {
         case KC_QWERTY:

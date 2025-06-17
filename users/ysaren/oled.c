@@ -10,6 +10,9 @@
 //     oled_write_P(qmk_logo, false);
 // }
 
+uint16_t lastKeycode;
+uint8_t lastModState;
+
 // required for the right second screen to see the state of the left keyboard
 // also requires #define SPLIT_TRANSPORT_MIRROR in config.h
 bool should_process_keypress(void) {
@@ -44,32 +47,32 @@ static void print_mods_short(void) {
 
 }
 
-static void print_mods_long(void) {
-    oled_clear();
-    oled_write_ln_P(PSTR("MODS"), false);
-    oled_write_ln_P(PSTR("\n"), false);
+// static void print_mods_long(void) {
+//     oled_clear();
+//     oled_write_ln_P(PSTR("MODS"), false);
+//     oled_write_ln_P(PSTR("\n"), false);
 
-    uint8_t mod_state = get_mods();
-    print_mod((mod_state & MOD_MASK_GUI  ) > 0, "GUI  ", false);
-    print_mod((mod_state & MOD_MASK_ALT  ) > 0, "ALT  ", false);
-    print_mod((mod_state & MOD_MASK_SHIFT) > 0, "SHIFT", false);
-    print_mod((mod_state & MOD_MASK_CTRL ) > 0, "CTRL ", false);
+//     uint8_t mod_state = get_mods();
+//     print_mod((mod_state & MOD_MASK_GUI  ) > 0, "GUI  ", false);
+//     print_mod((mod_state & MOD_MASK_ALT  ) > 0, "ALT  ", false);
+//     print_mod((mod_state & MOD_MASK_SHIFT) > 0, "SHIFT", false);
+//     print_mod((mod_state & MOD_MASK_CTRL ) > 0, "CTRL ", false);
 
-    oled_write_ln_P(PSTR("\n"), false);
+//     oled_write_ln_P(PSTR("\n"), false);
 
-    // keyboard leds
-    //led_t ledState = host_keyboard_led_state();
-    // hack - I'm trying to get capslock for the right-half of a split keyboard
-    // TODO: Not working on right half
-    /*
-    host_driver_t *driver = host_get_driver();
-    led_t ledState = (led_t) (*driver->keyboard_leds)();
+//     // keyboard leds
+//     //led_t ledState = host_keyboard_led_state();
+//     // hack - I'm trying to get capslock for the right-half of a split keyboard
+//     // TODO: Not working on right half
+//     /*
+//     host_driver_t *driver = host_get_driver();
+//     led_t ledState = (led_t) (*driver->keyboard_leds)();
 
-    print_mod(ledState.num_lock,    "NUM  ", false);
-    print_mod(ledState.caps_lock,   "CAPS ", false);
-    print_mod(ledState.scroll_lock, "SCRL ", false);
-    */
-}
+//     print_mod(ledState.num_lock,    "NUM  ", false);
+//     print_mod(ledState.caps_lock,   "CAPS ", false);
+//     print_mod(ledState.scroll_lock, "SCRL ", false);
+//     */
+// }
 
 static void print_layer(struct Layer layer) {
     oled_write_ln_P(PSTR(layer.name), layer.inverted);
@@ -106,6 +109,26 @@ static void print_status_narrow(void) {
     print_mods_short();
 }
 
+void print_last_key(void) {
+    oled_clear();
+    oled_write_ln_P(PSTR("last"), false);
+    oled_write_ln_P(PSTR("\n"), false);
+
+    print_mod((lastModState & MOD_MASK_GUI  ) > 0, "GUI  ", false);
+    print_mod((lastModState & MOD_MASK_ALT  ) > 0, "ALT  ", false);
+    print_mod((lastModState & MOD_MASK_SHIFT) > 0, "SHIFT", false);
+    print_mod((lastModState & MOD_MASK_CTRL ) > 0, "CTRL ", false);
+
+    char str[6];
+    sprintf(str, "%x", lastKeycode);
+    oled_write_ln_P(PSTR(str), false);
+}
+
+void update_last_key(uint16_t keycode) {
+    lastKeycode = keycode;
+    lastModState = get_mods();
+}
+
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
     // if (is_keyboard_master()) {
     return OLED_ROTATION_270;
@@ -118,7 +141,8 @@ bool oled_task_user(void) {
         print_status_narrow();
     } else {
         // render_logo();
-        print_mods_long();
+        // print_mods_long();
+        print_last_key();
     }
     return false;
 }
