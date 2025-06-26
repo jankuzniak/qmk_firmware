@@ -1,46 +1,87 @@
+#include "oled.h"
 
- /* Copyright 2021 Dane Evans
-  *
-  * This program is free software: you can redistribute it and/or modify
-  * it under the terms of the GNU General Public License as published by
-  * the Free Software Foundation, either version 2 of the License, or
-  * (at your option) any later version.
-  *
-  * This program is distributed in the hope that it will be useful,
-  * but WITHOUT ANY WARRANTY; without even the implied warranty of
-  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  * GNU General Public License for more details.
-  *
-  * You should have received a copy of the GNU General Public License
-  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
-  */
-  // SOFLE RGB
-#include <stdio.h>
-#include "oled_driver.h"
-#include "ysaren_layers.h"
+// static void render_logo(void) {
+//     static const char PROGMEM qmk_logo[] = {
+//         0x80, 0x81, 0x82, 0x83, 0x84, 0x85, 0x86, 0x87, 0x88, 0x89, 0x8A, 0x8B, 0x8C, 0x8D, 0x8E, 0x8F, 0x90, 0x91, 0x92, 0x93, 0x94,
+//         0xA0, 0xA1, 0xA2, 0xA3, 0xA4, 0xA5, 0xA6, 0xA7, 0xA8, 0xA9, 0xAA, 0xAB, 0xAC, 0xAD, 0xAE, 0xAF, 0xB0, 0xB1, 0xB2, 0xB3, 0xB4,
+//         0xC0, 0xC1, 0xC2, 0xC3, 0xC4, 0xC5, 0xC6, 0xC7, 0xC8, 0xC9, 0xCA, 0xCB, 0xCC, 0xCD, 0xCE, 0xCF, 0xD0, 0xD1, 0xD2, 0xD3, 0xD4, 0x00
+//     };
 
-static void render_logo(void) {
-    static const char PROGMEM qmk_logo[] = {
-        0x80, 0x81, 0x82, 0x83, 0x84, 0x85, 0x86, 0x87, 0x88, 0x89, 0x8A, 0x8B, 0x8C, 0x8D, 0x8E, 0x8F, 0x90, 0x91, 0x92, 0x93, 0x94,
-        0xA0, 0xA1, 0xA2, 0xA3, 0xA4, 0xA5, 0xA6, 0xA7, 0xA8, 0xA9, 0xAA, 0xAB, 0xAC, 0xAD, 0xAE, 0xAF, 0xB0, 0xB1, 0xB2, 0xB3, 0xB4,
-        0xC0, 0xC1, 0xC2, 0xC3, 0xC4, 0xC5, 0xC6, 0xC7, 0xC8, 0xC9, 0xCA, 0xCB, 0xCC, 0xCD, 0xCE, 0xCF, 0xD0, 0xD1, 0xD2, 0xD3, 0xD4, 0x00
-    };
+//     oled_write_P(qmk_logo, false);
+// }
 
-    oled_write_P(qmk_logo, false);
+uint16_t lastKeycode;
+uint8_t lastModState;
+
+// required for the right second screen to see the state of the left keyboard
+// also requires #define SPLIT_TRANSPORT_MIRROR in config.h
+bool should_process_keypress(void) {
+    return true;
 }
+
+static void print_mod(bool enabled, char *name, bool narrow) {
+    if (enabled) {
+        oled_write_P(PSTR(name), true);
+    } else {
+        if (narrow) {
+            oled_write_P(PSTR("."), false);
+        } else {
+            oled_write_P(PSTR(name), false);
+        }
+    }
+}
+
+static void print_mods_short(void) {
+    uint8_t mod_state = get_mods();
+    print_mod((mod_state & MOD_MASK_GUI  ) > 0, "G", true);
+    print_mod((mod_state & MOD_MASK_ALT  ) > 0, "A", true);
+    print_mod((mod_state & MOD_MASK_SHIFT) > 0, "S", true);
+    print_mod((mod_state & MOD_MASK_CTRL ) > 0, "C", true);
+
+    oled_write_ln_P(PSTR("\n"), false);
+
+    led_t ledState = host_keyboard_led_state();
+    print_mod(ledState.num_lock,    "N", true);
+    print_mod(ledState.caps_lock,   "C", true);
+    print_mod(ledState.scroll_lock, "S", true);
+
+}
+
+// static void print_mods_long(void) {
+//     oled_clear();
+//     oled_write_ln_P(PSTR("MODS"), false);
+//     oled_write_ln_P(PSTR("\n"), false);
+
+//     uint8_t mod_state = get_mods();
+//     print_mod((mod_state & MOD_MASK_GUI  ) > 0, "GUI  ", false);
+//     print_mod((mod_state & MOD_MASK_ALT  ) > 0, "ALT  ", false);
+//     print_mod((mod_state & MOD_MASK_SHIFT) > 0, "SHIFT", false);
+//     print_mod((mod_state & MOD_MASK_CTRL ) > 0, "CTRL ", false);
+
+//     oled_write_ln_P(PSTR("\n"), false);
+
+//     // keyboard leds
+//     //led_t ledState = host_keyboard_led_state();
+//     // hack - I'm trying to get capslock for the right-half of a split keyboard
+//     // TODO: Not working on right half
+//     /*
+//     host_driver_t *driver = host_get_driver();
+//     led_t ledState = (led_t) (*driver->keyboard_leds)();
+
+//     print_mod(ledState.num_lock,    "NUM  ", false);
+//     print_mod(ledState.caps_lock,   "CAPS ", false);
+//     print_mod(ledState.scroll_lock, "SCRL ", false);
+//     */
+// }
 
 static void print_layer(struct Layer layer) {
     oled_write_ln_P(PSTR(layer.name), layer.inverted);
 }
 
 static void print_status_narrow(void) {
-    // Print current mode
-    // oled_write_P(PSTR("\n\n"), false);
     oled_clear();
     oled_write_ln_P(PSTR("YSRN"), false);
     oled_write_ln_P(PSTR("\n"), false);
-
-	//snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Undef-%ld", layer_state)
 
     // "base" layers
     if (layer_state_is(layers[1].layer)) { // L_GAME_HW
@@ -49,28 +90,59 @@ static void print_status_narrow(void) {
         print_layer(layers[0]);
     }
 
-    oled_write_ln_P(PSTR("\n"), false);
+    //oled_write_ln_P(PSTR("\n"), false);
+
+    int current_line = 4;
 
     for (int i = 2; i < LAYERS_COUNT; i++) {
         struct Layer layer = layers[i];
         if (layer_state_is(layer.layer)) {
             print_layer(layer);
+            current_line++;
         }
     }
+
+    for (int i = current_line; i < 8; i++) {
+        oled_write_ln_P(PSTR("\n"), false);
+    }
+
+    print_mods_short();
+}
+
+void print_last_key(void) {
+    oled_clear();
+    oled_write_ln_P(PSTR("last"), false);
+    oled_write_ln_P(PSTR("\n"), false);
+
+    print_mod((lastModState & MOD_MASK_GUI  ) > 0, "GUI  ", false);
+    print_mod((lastModState & MOD_MASK_ALT  ) > 0, "ALT  ", false);
+    print_mod((lastModState & MOD_MASK_SHIFT) > 0, "SHIFT", false);
+    print_mod((lastModState & MOD_MASK_CTRL ) > 0, "CTRL ", false);
+
+    char str[6];
+    sprintf(str, "%x", lastKeycode);
+    oled_write_ln_P(PSTR(str), false);
+}
+
+void update_last_key(uint16_t keycode) {
+    lastKeycode = keycode;
+    lastModState = get_mods();
 }
 
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
-    if (is_keyboard_master()) {
-        return OLED_ROTATION_270;
-    }
-    return rotation;
+    // if (is_keyboard_master()) {
+    return OLED_ROTATION_270;
+    // }
+    // return rotation;
 }
 
 bool oled_task_user(void) {
     if (is_keyboard_master()) {
         print_status_narrow();
     } else {
-        render_logo();
+        // render_logo();
+        // print_mods_long();
+        print_last_key();
     }
     return false;
 }
@@ -78,9 +150,10 @@ bool oled_task_user(void) {
 void oled_render_boot(bool bootloader) {
     oled_clear();
     if (bootloader) {
-        oled_write_P(PSTR("\n\nAwait"), true);
-        oled_write_P(PSTR("New\n"),     true);
-        oled_write_P(PSTR("Firmw"),     true);
+        oled_write_P(PSTR("\n\n"), true);
+        oled_write_P(PSTR("push "), true);
+        oled_write_P(PSTR(" new "), true);
+        oled_write_P(PSTR("firm."), true);
     } else {
         oled_write_P(PSTR("Rebooting"), false);
     }
@@ -89,6 +162,8 @@ void oled_render_boot(bool bootloader) {
 }
 
 bool shutdown_user(bool jump_to_bootloader) {
-    oled_render_boot(jump_to_bootloader);
+    if (is_keyboard_master()) {
+        oled_render_boot(jump_to_bootloader);
+    }
     return false;
 }

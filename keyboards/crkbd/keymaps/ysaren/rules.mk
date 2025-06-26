@@ -19,6 +19,7 @@ RGB_MATRIX_ENABLE = no
 RGB_MATRIX_DRIVER = ws2812
 WS2812_DRIVER = vendor
 
-VIA_ENABLE = yes
+# note: enabling VIA may cause layout changes to be "cached" in EEPROM and layout.c changes not to be picked up
+VIA_ENABLE = no
 
 SERIAL_DRIVER = vendor

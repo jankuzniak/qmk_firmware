@@ -1,0 +1,107 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build sofle",
+            "type": "shell",
+            "command": "qmk compile -kb sofle -km ysaren",
+            "runOptions": {"instanceLimit": 1},
+            "problemMatcher": [
+                "$eslint-stylish"
+            ],
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false
+            }
+        },
+        {
+            "label": "build crkbd",
+            "type": "shell",
+            "command": "qmk compile -kb crkbd/rev2 -km ysaren",
+            "runOptions": {"instanceLimit": 1},
+            "problemMatcher": [
+                "$eslint-stylish"
+            ],
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false
+            }
+        },
+        {
+            "label": "flash sofle",
+            "type": "shell",
+            "command": "cp .build/sofle_rev2_ysaren.uf2 g:/ysaren.uf2",
+            "runOptions": {"instanceLimit": 1},
+            "problemMatcher": [
+                "$eslint-stylish"
+            ],
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false
+            }
+        },
+        {
+            "label": "flash crkbd",
+            "type": "shell",
+            "command": "cp .build/crkbd_rev2_ysaren.uf2 g:/ysaren.uf2",
+            "runOptions": {"instanceLimit": 1},
+            "problemMatcher": [
+                "$eslint-stylish"
+            ],
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false
+            }
+        },
+        {
+            "label": "flash sofle - converted",
+            "type": "shell",
+            "command": "cp .build/sofle_rev2_ysaren_elite_pi.uf2 g:/ysaren.uf2",
+            "runOptions": {"instanceLimit": 1},
+            "problemMatcher": [
+                "$eslint-stylish"
+            ],
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false
+            }
+        },
+        {
+            "label": "flash crkbd - converted",
+            "type": "shell",
+            "command": "cp .build/crkbd_rev1_ysaren_elite_pi.uf2 g:/ysaren.uf2",
+            "runOptions": {"instanceLimit": 1},
+            "problemMatcher": [
+                "$eslint-stylish"
+            ],
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false
+            }
+        }
+    ]
+}

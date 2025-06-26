@@ -6,8 +6,8 @@ enum ysaren_layers {
 
     L_GAME_HW,
 
-    L_SYMBOLS,
     L_NAVIGATION,
+    L_SYMBOLS,
     L_SWITCH,
     L_NUMBERS,
     L_NUMPAD,

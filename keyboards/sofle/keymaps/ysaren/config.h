@@ -28,6 +28,7 @@
 #undef SPLIT_USB_DETECT // fix for keyboard not being recognised at boot
 // #define MASTER_RIGHT
 // #define EE_HANDS
+#define SPLIT_TRANSPORT_MIRROR
 
 #define CUSTOM_FONT
 

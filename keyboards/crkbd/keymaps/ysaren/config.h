@@ -31,6 +31,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #undef SPLIT_USB_DETECT // fix for keyboard not being recognised at boot
 // #define MASTER_RIGHT
 // #define EE_HANDS
+#define SPLIT_TRANSPORT_MIRROR
 
 //#define QUICK_TAP_TERM 0
 //#define TAPPING_TERM 100
