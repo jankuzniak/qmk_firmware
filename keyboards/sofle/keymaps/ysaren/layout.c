@@ -6,7 +6,8 @@
 #define HR_CTL OSM(MOD_LCTL)
 #define KC_DITTO    G(A(S(KC_V)))
 #define KC_TO_PASTE G(A(S(KC_C)))
-#define KC_D_MUTE   C(A(S(KC_UP)))
+#define KC_VM_MUTE  KC_F13      // voice meter macro button mute
+#define KC_MIC_MUTE G(A(KC_K))  // win11 mic mute hotkey
 #define KC_SCRSHT   G(S(KC_S))
 
 #define F_ZONE_1 LCAG(KC_1)
@@ -43,7 +44,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * | tab   |  win   |  alt   | shift  |  ctrl  | ctrl+T |                    |  home  |        |   up   |        | pg up  |  ins   |
  * |-------+--------+--------+--------+--------+--------|                    |---------+--------+--------+--------+--------+--------|
  * | shift | ctrl+A |  del   |  esc   | enter  |txtPaste|-------.    ,-------|  end   |  left  |  down  | right  | pg dn  | ctrl++ |
- * |-------+--------+--------+--------+--------+--------|       |    |       |---------+--------+--------+--------+--------+--------|
+ * |-------+--------+--------+--------+--------+--------|  MIC  |    |       |---------+--------+--------+--------+--------+--------|
  * | ctrl  | ctrl+Z | ctrl+X | ctrl+C | ctrl+V | ditto  |-------|    |-------|        | numpad |        |        | ctrl+0 | ctrl+- |
  * `----------------------------------------------------/       /     \      \------------------------------------------------------'
  *               |        |        |        |        | /       /       \      \  |        |  num   |        |        |
@@ -55,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX,    XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,                              XXXXXXX,     XXXXXXX,      XXXXXXX,   XXXXXXX,    XXXXXXX,    XXXXXXX,
     _______,    OS_GUI,   OS_LALT,  OS_SFT,   OS_CTL,   C(KC_T),                              KC_HOME,   C(KC_LEFT),     KC_UP,   C(KC_RIGHT),  KC_PGUP,    KC_INS,
     MO(L_IDE),  C(KC_A),  KC_DEL,   KC_ESC,   KC_ENT,   KC_TO_PASTE,                          KC_END,      KC_LEFT,      KC_DOWN,   KC_RGHT,    KC_PGDN,  C(KC_PLUS),
-    _______,    C(KC_Z),  C(KC_X),  C(KC_C),  C(KC_V),  KC_DITTO,     _______,      _______,  XXXXXXX,     TG_NUMPAD,  C(KC_DOWN),  XXXXXXX,    C(KC_0),  C(KC_MINUS),
+    _______,    C(KC_Z),  C(KC_X),  C(KC_C),  C(KC_V),  KC_DITTO,     KC_MIC_MUTE,  _______,  XXXXXXX,     TG_NUMPAD,  C(KC_DOWN),  XXXXXXX,    C(KC_0),  C(KC_MINUS),
                           XXXXXXX,  XXXXXXX,  _______,  KC_SYMBOLS,   _______,      _______,  KC_NUMWORD,  _______,      XXXXXXX,   XXXXXXX
 ),
 
@@ -68,18 +69,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * |LShift|   #  |   $  |   (  |   )  |   `  |-------.    ,-------|   -  | ctrl | shft | alt  | gui  |      |
  * |------+------+------+------+------+------|       |    |       |------+------+------+------+------+------|
- * | LCTR |   %  |   ^  |   [  |   ]  |   ~  |-------|    |-------|   =  |      |  <   |   >  |      |      |
+ * | LCTR |   %  |   ^  |   [  |   ]  |   ~  |-------|    |-------|   =  | mute |  <   |   >  |      |      |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
  *            |      |      |      |      | /       /       \      \  |      |      |      |      |
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
  *            `----------------------------------'           '------''---------------------------'
  */
 [L_SYMBOLS] = LAYOUT(
-    _______,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,                           XXXXXXX,   XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
-    _______,  KC_EXLM,  KC_AT,    KC_LCBR,  KC_RCBR,  KC_PIPE,                           KC_PLUS,   KC_AMPR,  KC_ASTR,  XXXXXXX,  XXXXXXX,  XXXXXXX,
-    KC_LSFT,  KC_HASH,  KC_DLR,   KC_LPRN,  KC_RPRN,  KC_GRV,                            KC_MINUS,  OS_CTL,   OS_SFT,   OS_RALT,  OS_GUI,   XXXXXXX,
-    _______,  KC_PERC,  KC_CIRC,  KC_LBRC,  KC_RBRC,  KC_TILDE,  _______,      _______,  KC_EQUAL,  XXXXXXX,  KC_LABK,  KC_RABK,  XXXXXXX,  XXXXXXX,
-                        XXXXXXX,  XXXXXXX,  _______,  _______,   _______,      _______,  KC_BSPC,   _______,  XXXXXXX,  XXXXXXX
+    _______,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,                           XXXXXXX,   XXXXXXX,    XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
+    _______,  KC_EXLM,  KC_AT,    KC_LCBR,  KC_RCBR,  KC_PIPE,                           KC_PLUS,   KC_AMPR,    KC_ASTR,  XXXXXXX,  XXXXXXX,  XXXXXXX,
+    KC_LSFT,  KC_HASH,  KC_DLR,   KC_LPRN,  KC_RPRN,  KC_GRV,                            KC_MINUS,  OS_CTL,     OS_SFT,   OS_RALT,  OS_GUI,   XXXXXXX,
+    _______,  KC_PERC,  KC_CIRC,  KC_LBRC,  KC_RBRC,  KC_TILDE,  _______,      _______,  KC_EQUAL,  XXXXXXX,    KC_LABK,  KC_RABK,  XXXXXXX,  XXXXXXX,
+                        XXXXXXX,  XXXXXXX,  _______,  _______,   _______,      _______,  KC_BSPC,   KC_VM_MUTE, XXXXXXX,  XXXXXXX
 ),
 
 /*
@@ -110,7 +111,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,                          XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
     _______,  KC_EXLM,  KC_AT,    KC_HASH,  KC_DLR,   KC_PERC,                          KC_CIRC,  KC_AMPR,  KC_ASTR,  KC_LPRN,  KC_RPRN,  KC_UNDS,
     _______,  KC_1,     KC_2,     KC_3,     KC_4,     KC_5,                             KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,
-    _______,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  _______,      _______,  KC_EQL,   KC_PPLS,  KC_COMM,  KC_DOT,   KC_PSLS,  KC_PAST,
+    _______,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_COLN,  _______,      _______,  KC_EQL,   KC_PPLS,  KC_COMM,  KC_DOT,   KC_PSLS,  KC_PAST,
                         XXXXXXX,  XXXXXXX,  _______,  _______,  KC_NAVI,      _______,  _______,  _______,  XXXXXXX,  XXXXXXX
 ),
 
