@@ -6,7 +6,8 @@
 #define HR_CTL OSM(MOD_LCTL)
 #define KC_DITTO    G(A(S(KC_V)))
 #define KC_TO_PASTE G(A(S(KC_C)))
-#define KC_D_MUTE   C(A(S(KC_UP)))
+#define KC_VM_MUTE  KC_F13      // voice meter macro button mute
+#define KC_MIC_MUTE G(A(KC_K))  // win11 mic mute hotkey
 #define KC_SCRSHT   G(S(KC_S))
 
 #define F_ZONE_1 LCAG(KC_1)
@@ -45,7 +46,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * | tab   |  win   |  alt   | shift  |  ctrl  | ctrl+T |                    |  home  |        |   up   |        | pg up  |  ins   |
  * |-------+--------+--------+--------+--------+--------|                    |---------+--------+--------+--------+--------+-------|
  * | IDE   | ctrl+A |  del   |  esc   | enter  |txtPaste|-------.    ,-------|  end   |  left  |  down  | right  | pg dn  | ctrl++ |
- * |-------+--------+--------+--------+--------+--------|       |    |       |---------+--------+--------+--------+--------+-------|
+ * |-------+--------+--------+--------+--------+--------|  MIC  |    |       |---------+--------+--------+--------+--------+-------|
  * | SWITCH| ctrl+Z | ctrl+X | ctrl+C | ctrl+V | ditto  |-------|    |-------|        | numpad |        |        | ctrl+0 | ctrl+- |
  * `----------------------------------------------------/       /     \      \-----------------------------------------------------'
  *               |        |        |        |        | /       /       \      \  |        |  num   |        |        |
