@@ -38,6 +38,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                          XXXXXXX,  XXXXXXX,  _______,  KC_Q,     _______,      _______,  _______,  _______,  XXXXXXX,  XXXXXXX
 ),
 
+[L_NUMPAD] = LAYOUT(
+    _______,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,                            XXXXXXX,      XXXXXXX,   XXXXXXX,  XXXXXXX,  XXXXXXX,         XXXXXXX,
+    _______,  KC_LALT,  KC_F2,    KC_UP,    KC_F4,    XXXXXXX,                            KC_KP_PLUS,   KC_P7,     KC_P8,    KC_P9,    KC_KP_MINUS,     XXXXXXX,
+    _______,  KC_LPRN,  KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_RPRN,                            KC_KP_MINUS,  KC_P4,     KC_P5,    KC_P6,    KC_KP_ASTERISK,  KC_ENT,
+    _______,  KC_LABK,  KC_DEL,   KC_ESC,   KC_ENT,   KC_RABK,  _______,        _______,  KC_EQUAL,     KC_P1,     KC_P2,    KC_P3,    KC_KP_SLASH,     KC_DOT,
+                        _______,  _______,  _______,  _______,  TG_NUMPAD,      _______,  _______,      KC_KP_0,   KC_KP_0,  KC_DOT
+),
+
+[L_NUMBERS] = LAYOUT(
+    _______,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,     XXXXXXX,                          XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
+    _______,  KC_EXLM,  KC_AT,    KC_HASH,  KC_DLR,      KC_PERC,                          KC_CIRC,  KC_AMPR,  KC_ASTR,  KC_LPRN,  KC_RPRN,  KC_UNDS,
+    _______,  KC_1,     KC_2,     KC_3,     KC_4,        KC_5,                             KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,
+    _______,  XXXXXXX,  KC_X,     XXXXXXX,  S(KC_SCLN),  KC_M,     _______,      _______,  KC_EQL,   KC_PPLS,  KC_COMM,  KC_DOT,   KC_PSLS,  KC_PAST,
+                        XXXXXXX,  XXXXXXX,  _______,     _______,  KC_NAVI,      _______,  _______,  _______,  XXXXXXX,  XXXXXXX
+),
+
 /*
  * Navigation
  * ,----------------------------------------------------.                    ,-----------------------------------------------------.
@@ -100,22 +116,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *            |      |      |      |      |/       /         \      \ |      |  0   |  0   |  .   |
  *            `----------------------------------'           '------''---------------------------'
  */
-
-[L_NUMPAD] = LAYOUT(
-    _______,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,                            XXXXXXX,      XXXXXXX,   XXXXXXX,  XXXXXXX,  XXXXXXX,         XXXXXXX,
-    _______,  KC_LALT,  KC_F2,    KC_UP,    KC_F4,    XXXXXXX,                            KC_KP_PLUS,   KC_P7,     KC_P8,    KC_P9,    KC_KP_MINUS,     XXXXXXX,
-    _______,  KC_LPRN,  KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_RPRN,                            KC_KP_MINUS,  KC_P4,     KC_P5,    KC_P6,    KC_KP_ASTERISK,  KC_ENT,
-    _______,  KC_LABK,  KC_DEL,   KC_ESC,   KC_ENT,   KC_RABK,  _______,        _______,  KC_EQUAL,     KC_P1,     KC_P2,    KC_P3,    KC_KP_SLASH,     KC_DOT,
-                        _______,  _______,  _______,  _______,  TG_NUMPAD,      _______,  _______,      KC_KP_0,   KC_KP_0,  KC_DOT
-),
-
-[L_NUMBERS] = LAYOUT(
-    _______,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,     XXXXXXX,                          XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
-    _______,  KC_EXLM,  KC_AT,    KC_HASH,  KC_DLR,      KC_PERC,                          KC_CIRC,  KC_AMPR,  KC_ASTR,  KC_LPRN,  KC_RPRN,  KC_UNDS,
-    _______,  KC_1,     KC_2,     KC_3,     KC_4,        KC_5,                             KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,
-    _______,  XXXXXXX,  KC_X,     XXXXXXX,  S(KC_SCLN),  KC_M,     _______,      _______,  KC_EQL,   KC_PPLS,  KC_COMM,  KC_DOT,   KC_PSLS,  KC_PAST,
-                        XXXXXXX,  XXXXXXX,  _______,     _______,  KC_NAVI,      _______,  _______,  _______,  XXXXXXX,  XXXXXXX
-),
 
  // need to re-establish left shift and backspace due to L_NAVIGATION
 [L_SWITCH] = LAYOUT(
