@@ -38,6 +38,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                          XXXXXXX,  XXXXXXX,  _______,  KC_Q,     _______,      _______,  _______,  _______,  XXXXXXX,  XXXXXXX
 ),
 
+/*
+ * NUMPAD
+ * ,--------------------------------------------.                    ,------------------------------------------.
+ * |       |       |      |      |       |      |                    |      |      |      |      |      |       |
+ * |-------+-------+------+------+-------+------|                    |------+------+------+------+------+-------|
+ * | tab   | r-alt |  f2  |  esc |  f4   |      |                    |   +  |  7   |  8   |  9   |  -   |       |
+ * |-------+-------+------+------+-------+------|                    |------+------+------+------+------+-------|
+ * | shift |   {   |  del |  up  | enter |  }   |-------.    ,-------|   -  |  4   |  5   |  6   |  *   | enter |
+ * |-------+-------+------+------+-------+------|       |    |       |------+------+------+------+------+-------|
+ * | ctrl  |   <   | left | down | right |  >   |-------|    |-------|   =  |  1   |  2   |  3   |  /   |   .   |
+ * `-------------------------------------------/       /     \      \-------------------------------------------'
+ *             |      |      |      |      | /       /       \      \  |      |      |      |      |
+ *            |      |      |      |      |/       /         \      \ |      |  0   |  0   |  .   |
+ *            `----------------------------------'           '------''---------------------------'
+ */
+
 [L_NUMPAD] = LAYOUT(
     _______,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,                            XXXXXXX,      XXXXXXX,   XXXXXXX,  XXXXXXX,  XXXXXXX,         XXXXXXX,
     _______,  KC_LALT,  KC_F2,    KC_UP,    KC_F4,    XXXXXXX,                            KC_KP_PLUS,   KC_P7,     KC_P8,    KC_P9,    KC_KP_MINUS,     XXXXXXX,
@@ -74,7 +90,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX,    XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,                                 XXXXXXX,     XXXXXXX,      XXXXXXX,   XXXXXXX,    XXXXXXX,  C(KC_KP_PLUS),
     _______,    OS_GUI,   OS_LALT,  OS_SFT,   OS_CTL,   C(KC_T),                                 KC_HOME,   C(KC_LEFT),     KC_UP,   C(KC_RIGHT),  KC_PGUP,    KC_INS,
     MO(L_IDE),  C(KC_A),  KC_DEL,   KC_ESC,   KC_ENT,   KC_TO_PASTE,                             KC_END,      KC_LEFT,      KC_DOWN,   KC_RGHT,    KC_PGDN,  C(KC_PLUS),
-    KC_SYMB,    C(KC_Z),  C(KC_X),  C(KC_C),  C(KC_V),  KC_DITTO,        _______,      _______,  XXXXXXX,     TG_NUMPAD,  C(KC_DOWN),  XXXXXXX,    C(KC_0),  C(KC_MINUS),
+    KC_SYMB,    C(KC_Z),  C(KC_X),  C(KC_C),  C(KC_V),  KC_DITTO,        _______,      _______,  XXXXXXX,     TG_NUMPAD,  C(KC_DOWN),   KC_APP,    C(KC_0),  C(KC_MINUS),
                           XXXXXXX,  XXXXXXX,  TG(L_NUMBERS),  _______,   _______,      _______,  KC_NUMWORD,  _______,      XXXXXXX,   XXXXXXX
 ),
 
@@ -101,28 +117,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                         XXXXXXX,  XXXXXXX,  _______,  _______,   _______,      _______,  _______,   _______,  XXXXXXX,  XXXXXXX
 ),
 
-/*
- * NUMPAD
- * ,--------------------------------------------.                    ,------------------------------------------.
- * |       |       |      |      |       |      |                    |      |      |      |      |      |       |
- * |-------+-------+------+------+-------+------|                    |------+------+------+------+------+-------|
- * | tab   | r-alt |  f2  |  esc |  f4   |      |                    |   +  |  7   |  8   |  9   |  -   |       |
- * |-------+-------+------+------+-------+------|                    |------+------+------+------+------+-------|
- * | shift |   {   |  del |  up  | enter |  }   |-------.    ,-------|   -  |  4   |  5   |  6   |  *   | enter |
- * |-------+-------+------+------+-------+------|       |    |       |------+------+------+------+------+-------|
- * | ctrl  |   <   | left | down | right |  >   |-------|    |-------|   =  |  1   |  2   |  3   |  /   |   .   |
- * `-------------------------------------------/       /     \      \-------------------------------------------'
- *             |      |      |      |      | /       /       \      \  |      |      |      |      |
- *            |      |      |      |      |/       /         \      \ |      |  0   |  0   |  .   |
- *            `----------------------------------'           '------''---------------------------'
- */
-
  // need to re-establish left shift and backspace due to L_NAVIGATION
 [L_SWITCH] = LAYOUT(
     XXXXXXX,  XXXXXXX,        XXXXXXX,  XXXXXXX,    XXXXXXX,  XXXXXXX,                          XXXXXXX,   XXXXXXX,    XXXXXXX,   XXXXXXX,  XXXXXXX,  XXXXXXX,
     _______,  KC_F1,          KC_F2,    KC_F3,      KC_F4,    KC_F5,                            KC_F6,     KC_F7,      KC_F8,     KC_F9,    KC_F10,   KC_F11,
     KC_LSFT,  TG(L_GAME_HW),  XXXXXXX,  XXXXXXX,    XXXXXXX,  XXXXXXX,                          XXXXXXX,   OS_CTL,     OS_SFT,    OS_LALT,  OS_GUI,   KC_F12,
-    _______,  KC_PSCR,        KC_SCRL,  G(KC_PAUS), KC_NLCK,  KC_CAPS,  _______,      _______,  F_ZONE_1,  F_ZONE_2,   F_ZONE_3,  KC_APP,   XXXXXXX,  XXXXXXX,
+    _______,  KC_PSCR,        KC_SCRL,  G(KC_PAUS), KC_NLCK,  KC_CAPS,  _______,      _______,  F_ZONE_1,  F_ZONE_2,   F_ZONE_3,  XXXXXXX,  XXXXXXX,  XXXXXXX,
                               XXXXXXX,  XXXXXXX,    _______,  _______,  _______,      _______,  KC_BSPC,   _______,    XXXXXXX,   XXXXXXX
 ),
 
