@@ -13,6 +13,7 @@
 #define F_ZONE_1 LCAG(KC_1)
 #define F_ZONE_2 LCAG(KC_2)
 #define F_ZONE_3 LCAG(KC_3)
+#define F_ZONE_4 LCAG(KC_4)
 
 #define TG_NUMPAD   TG(L_NUMPAD)
 #define MO_NUMBER   MO(L_NUMBERS)
@@ -119,10 +120,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
  // need to re-establish left shift and backspace due to L_NAVIGATION
 [L_SWITCH] = LAYOUT(
-    XXXXXXX,  XXXXXXX,        XXXXXXX,  XXXXXXX,    XXXXXXX,  XXXXXXX,                          XXXXXXX,   XXXXXXX,    XXXXXXX,   XXXXXXX,  XXXXXXX,  XXXXXXX,
-    _______,  KC_F1,          KC_F2,    KC_F3,      KC_F4,    KC_F5,                            KC_F6,     KC_F7,      KC_F8,     KC_F9,    KC_F10,   KC_F11,
-    KC_LSFT,  TG(L_GAME_HW),  XXXXXXX,  XXXXXXX,    XXXXXXX,  XXXXXXX,                          XXXXXXX,   OS_CTL,     OS_SFT,    OS_LALT,  OS_GUI,   KC_F12,
-    _______,  KC_PSCR,        KC_SCRL,  G(KC_PAUS), KC_NLCK,  KC_CAPS,  _______,      _______,  F_ZONE_1,  F_ZONE_2,   F_ZONE_3,  XXXXXXX,  XXXXXXX,  XXXXXXX,
+    XXXXXXX,  XXXXXXX,        XXXXXXX,  XXXXXXX,    XXXXXXX,  XXXXXXX,                          XXXXXXX,   XXXXXXX,    XXXXXXX,   XXXXXXX,   XXXXXXX,  XXXXXXX,
+    _______,  KC_F1,          KC_F2,    KC_F3,      KC_F4,    KC_F5,                            KC_F6,     KC_F7,      KC_F8,     KC_F9,     KC_F10,   KC_F11,
+    KC_LSFT,  TG(L_GAME_HW),  XXXXXXX,  XXXXXXX,    XXXXXXX,  XXXXXXX,                          XXXXXXX,   OS_CTL,     OS_SFT,    OS_LALT,   OS_GUI,   KC_F12,
+    _______,  KC_PSCR,        KC_SCRL,  G(KC_PAUS), KC_NLCK,  KC_CAPS,  _______,      _______,  F_ZONE_1,  F_ZONE_2,   F_ZONE_3,  F_ZONE_4,  XXXXXXX,  XXXXXXX,
                               XXXXXXX,  XXXXXXX,    _______,  _______,  _______,      _______,  KC_BSPC,   _______,    XXXXXXX,   XXXXXXX
 ),
 
